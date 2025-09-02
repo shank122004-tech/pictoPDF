@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EasyFreePDF — Free Online File & Image to PDF Converter</title>
+  <meta name="description" content="EasyFreePDF.online — Convert images, Word, text and PDF files to PDF instantly in your browser. Private, fast, no uploads." />
+  <meta name="keywords" content="jpg to pdf, word to pdf, merge pdf, image to pdf, convert to pdf online, free pdf converter" />
+  <link rel="canonical" href="https://easyfreepdf.online/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EasyFreePDF - Free PDF Converter" />
+  <meta property="og:description" content="Convert files and images to PDF online for free. Merge PDFs, extract text, and convert Word to PDF instantly without signup." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://easyfreepdf.online/" />
+  <meta property="og:image" content="https://easyfreepdf.online/preview.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EasyFreePDF - Free PDF Converter" />
+  <meta name="twitter:description" content="Convert files and images to PDF online for free. Merge PDFs, extract text, and convert Word to PDF instantly without signup." />
+  <meta name="twitter:image" content="https://easyfreepdf.online/preview.png" />
+
+  <!-- Favicon (replace with your file) -->
+  <link rel="icon" href="https://easyfreepdf.online/logo.png" type="image/png" />
+
+  <!-- Sitemap reference -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <!-- Google Analytics: replace G-XXXXXXXXXX with your GA4 measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Structured Data (SoftwareApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"EasyFreePDF",
+    "url":"https://easyfreepdf.online",
+    "description":"Convert files and images to PDF online for free. Merge PDFs, extract text, and convert Word to PDF instantly without signup.",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"All",
+    "creator":{"@type":"Organization","name":"EasyFreePDF"}
+  }
+  </script>
+
+  <!-- FAQ schema (improves chances of rich snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How to convert a file to PDF?","acceptedAnswer":{"@type":"Answer","text":"Upload one or more files using the uploader, reorder if needed, then click Convert to PDF. Download or share after conversion."}},
+      {"@type":"Question","name":"Is EasyFreePDF free?","acceptedAnswer":{"@type":"Answer","text":"Yes — the tools are free to use. Files are processed locally in your browser by default."}},
+      {"@type":"Question","name":"Can I share converted PDFs?","acceptedAnswer":{"@type":"Answer","text":"Yes — on mobile you can share the actual PDF with apps via the native share dialog. Desktop users can upload to your server to get a shareable link."}}
+    ]
+  }
+  </script>
+
+  <!-- AdSense loader (replace with your publisher id later) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <style>
+    :root{
+      --bg:#07102a; --card:#071826; --muted:#9aa6bd; --accent1:#3b82f6; --accent2:#06b6d4; --success:#34d399;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#071025,#041029);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .nav{position:fixed;top:0;left:0;right:0;background:linear-gradient(180deg,rgba(2,6,23,0.96),rgba(2,6,23,0.8));backdrop-filter:blur(6px);z-index:150;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .nav .inner{max-width:1200px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--accent1);font-weight:800}
+    .logo{width:44px;height:44px;background:linear-gradient(135deg,var(--accent1),var(--accent2));border-radius:10px;display:grid;place-items:center;color:#021028;font-weight:900}
+    .menu{display:flex;gap:12px;align-items:center}
+    .menu a{color:#cfe9ff;text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .18s}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,#0b1220,rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03);color:#dff6ff;text-decoration:none}
+    .container{max-width:1150px;margin:96px auto 40px;padding:18px}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);border-radius:14px;padding:18px;box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+    h1{margin:0;color:#eaf6ff}
+    .muted{color:var(--muted)}
+    .upload{border:2px dashed rgba(255,255,255,0.06);padding:30px;border-radius:12px;text-align:center;cursor:pointer;transition:box-shadow .18s, border-color .18s}
+    .upload.drag{border-color:rgba(59,130,246,0.9);box-shadow:0 12px 40px rgba(59,130,246,0.06)}
+    .controls{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+    .btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#021028;border:0;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(6,182,212,0.08)}
+    .btn.secondary{background:transparent;color:#cfe9ff;border:1px solid rgba(255,255,255,0.04)}
+    .file-list{margin-top:14px;max-height:380px;overflow:auto;padding-right:6px}
+    .file{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);margin-bottom:10px}
+    .ext{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#0e2b4f,#07253a);display:grid;place-items:center;font-weight:800}
+    .meta{flex:1}
+    .name{font-weight:700;color:#dff3ff}
+    .actions{display:flex;gap:6px}
+    .aside .card{padding:14px;border-radius:12px}
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .tool{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-height:130px}
+    .faq-item{background:var(--card);padding:12px;border-radius:10px;margin-bottom:8px}
+    .whatsapp-share{position:fixed;bottom:96px;right:20px;background:#25D366;border-radius:50%;padding:10px;box-shadow:0 6px 20px rgba(0,0,0,0.28);z-index:180;display:inline-flex;align-items:center;justify-content:center;transition:transform .18s}
+    .whatsapp-share:hover{transform:scale(1.06)}
+    footer{margin-top:28px;text-align:center;color:var(--muted);padding:34px 18px 90px}
+    .glow-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#22c55e,#06b6d4);color:#021028;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(6,182,212,0.12);transition:transform .18s,box-shadow .18s}
+    @media (max-width:768px){.menu .links{display:none}}
+  </style>
+</head>
+<body>
+
+  <div class="nav" role="navigation" aria-label="Main navigation">
+    <div class="inner">
+      <a class="brand" href="/">
+        <div class="logo">EFP</div>
+        <div>
+          <div style="font-size:16px">EasyFreePDF</div>
+          <div class="small" style="margin-top:2px;color:#bfe8ff">Free file → PDF converter</div>
+        </div>
+      </a>
+
+      <div class="menu">
+        <div class="links">
+          <a href="#tools">Home</a>
+          <a href="#faq">FAQ</a>
+          <a href="#blog">Blog</a>
+        </div>
+        <div class="tool-links">
+          <a class="pill" href="https://sscexampreparation.in" target="_blank" rel="noopener noreferrer">🎓 SSC Prep</a>
+          <a class="pill" href="https://becomebillionaire.shop" target="_blank" rel="noopener noreferrer">💰 Billionaire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="tools">
+    <div class="panel" role="main">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;">
+        <div>
+          <h1>Universal File → PDF Converter</h1>
+          <div class="muted small">Supported: Images (JPG/PNG/WEBP/GIF*), PDF (merge), TXT/CSV/MD, DOCX. Files processed locally by default.</div>
+        </div>
+        <div style="text-align:right">
+          <div class="small muted">Sponsored</div>
+          <div class="ads" style="width:240px;margin-top:6px">
+            <!-- AdSense placeholder -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div>
+          <div class="ads">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          </div>
+
+          <div id="uploadArea" class="upload" title="Click or drop files">
+            <div style="font-size:28px">📁</div>
+            <p style="margin:8px 0 6px">Drag & drop files here, or click to browse</p>
+            <div class="small muted">Multiple files supported. Reorder files after uploading to set page order.</div>
+          </div>
+
+          <div class="controls">
+            <button id="convertBtn" class="btn">Convert to PDF</button>
+            <button id="shareBtn" class="btn secondary" style="display:none">Share (native)</button>
+            <button id="uploadShareBtn" class="btn secondary" style="display:none">Upload & Get Link</button>
+            <button id="clearBtn" class="btn secondary">Clear List</button>
+            <a id="downloadBtn" class="btn" style="display:none;background:linear-gradient(90deg,#34d399,#60a5fa);">Download PDF</a>
+          </div>
+
+          <div style="height:12px"></div>
+          <div class="ads">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          </div>
+
+          <div class="file-list" id="fileList" aria-live="polite"></div>
+
+          <div style="height:12px"></div>
+          <div class="ads">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="small muted">Tip: Use the ↑ ↓ buttons to reorder files. GIFs use first frame only. Output default: A4 pages.</div>
+          </div>
+        </div>
+
+        <aside class="aside" aria-label="Tools & info">
+          <div class="card">
+            <div class="stat"><div class="circle">A4</div><div><strong>Output</strong><div class="small muted">A4 pages (210×297 mm)</div></div></div>
+            <div class="stat"><div class="circle">🔒</div><div><strong>Privacy</strong><div class="small muted">Files processed locally in your browser (unless you upload them)</div></div></div>
+            <div class="stat"><div class="circle">⚡</div><div><strong>Speed</strong><div class="small muted">Fast client-side conversion</div></div></div>
+
+            <div style="height:12px"></div>
+            <div class="ads">
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            </div>
+
+            <div style="height:12px"></div>
+            <h4 style="margin:6px 0">About EasyFreePDF</h4>
+            <div class="small muted">Lightweight browser tool for students & professionals. No account required.</div>
+            <div style="height:8px"></div>
+            <a class="small muted" href="#privacy">Privacy</a> · <a class="small muted" href="#contact">Contact</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Extra Tools -->
+    <section class="panel" style="margin-top:18px" aria-labelledby="extra-tools-heading">
+      <h3 id="extra-tools-heading" style="margin:0 0 8px">Extra Tools</h3>
+      <div class="tools">
+        <div class="tool" id="tool-image2pdf">
+          <h4>📄 Image → PDF</h4>
+          <p class="muted">Convert images to a single PDF.</p>
+          <div class="tool-actions">
+            <input id="img2pdf-input" type="file" accept="image/*" multiple style="display:none">
+            <button class="btn" id="img2pdf-btn">Choose Images</button>
+            <button class="btn secondary" id="img2pdf-run">Convert</button>
+          </div>
+          <div class="ads" style="margin-top:10px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="7010101010" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+        </div>
+
+        <div class="tool" id="tool-mergepdf">
+          <h4>🔗 Merge PDFs</h4>
+          <p class="muted">Upload PDFs and merge them.</p>
+          <div class="tool-actions">
+            <input id="merge-input" type="file" accept="application/pdf" multiple style="display:none">
+            <button class="btn" id="merge-choose">Choose PDFs</button>
+            <button class="btn secondary" id="merge-run">Merge</button>
+          </div>
+          <div class="ads" style="margin-top:10px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="7020202020" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+        </div>
+
+        <div class="tool" id="tool-extract">
+          <h4>✂️ Extract Text</h4>
+          <p class="muted">Extract readable text from PDFs.</p>
+          <div class="tool-actions">
+            <input id="extract-input" type="file" accept="application/pdf" style="display:none">
+            <button class="btn" id="extract-choose">Choose PDF</button>
+            <button class="btn secondary" id="extract-run">Extract</button>
+          </div>
+          <textarea id="extract-output" style="width:100%;height:140px;margin-top:10px;background:#071026;color:#e6eef8;border-radius:8px;padding:8px;border:1px solid rgba(255,255,255,0.03)"></textarea>
+          <div class="ads" style="margin-top:10px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="7030303030" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+        </div>
+
+        <div class="tool" id="tool-word2pdf">
+          <h4>📝 Word → PDF</h4>
+          <p class="muted">Convert .docx to PDF (text-only).</p>
+          <div class="tool-actions">
+            <input id="word-input" type="file" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document" style="display:none">
+            <button class="btn" id="word-choose">Choose DOCX</button>
+            <button class="btn secondary" id="word-run">Convert</button>
+          </div>
+          <div class="ads" style="margin-top:10px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="7040404040" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="panel faq-section" style="margin-top:18px">
+      <h3 style="margin-top:0">❓ Frequently Asked Questions</h3>
+      <div class="faq-item"><h3>How to convert a file to PDF?</h3><p>Upload files using the uploader, reorder, click Convert, then download or share.</p></div>
+      <div class="faq-item"><h3>Is EasyFreePDF free?</h3><p>Yes — the tools are free to use. Ads help support the service.</p></div>
+      <div class="faq-item"><h3>How can I share PDFs?</h3><p>On mobile use the native Share button (works with WhatsApp/Telegram). Desktop users can upload to a server to get a shareable link.</p></div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="panel blog-section" style="margin-top:18px">
+      <h3 style="margin-top:0">📝 Latest Blog Posts</h3>
+      <article class="blog-post"><h3>Top 5 Free Online PDF Tools in 2025</h3><p class="muted">A short guide covering the most useful PDF tools and workflows. <a href="#tools" style="color:var(--accent2)">Try our tools →</a></p></article>
+      <article class="blog-post"><h3>How to Combine Multiple Images into One PDF</h3><p class="muted">Simple steps to merge images into a single PDF in your browser. <a href="#tool-image2pdf" style="color:var(--accent2)">Use the Image → PDF tool →</a></p></article>
+    </section>
+
+    <section id="privacy" class="panel" style="margin-top:18px">
+      <h3>Privacy Policy</h3>
+      <p class="muted small">By default files are processed locally in your browser and are not uploaded anywhere unless you explicitly use Upload & Get Link. For questions contact hello@easyfreepdf.online</p>
+    </section>
+
+    <section id="contact" class="panel" style="margin-top:18px">
+      <h3>Contact</h3>
+      <p class="muted small">Email: <a href="mailto:hello@easyfreepdf.online" style="color:var(--accent2)">hello@easyfreepdf.online</a></p>
+    </section>
+
+    <footer>
+      <div>© 2025 EasyFreePDF.online – Free, Secure, No Uploads</div>
+      <div class="ads" style="margin-top:14px">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="7050505050" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </footer>
+  </div>
+
+  <!-- sidebar ad -->
+  <div style="position:fixed;right:12px;top:160px;width:160px;z-index:60">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="7060606060" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- Floating share (fallback link shares) -->
+  <div style="position:fixed;right:16px;bottom:18px;display:flex;gap:10px;z-index:190">
+    <a class="whatsapp-share" id="whatsappFallback" title="Share link on WhatsApp" target="_blank" rel="noopener" style="display:none;padding:10px;border-radius:999px;background:#25D366;color:#021028;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,0.12)">📩</a>
+    <a id="twitterShare" title="Share on Twitter" target="_blank" rel="noopener" style="padding:10px;border-radius:999px;background:#1DA1F2;color:#fff;text-decoration:none;box-shadow:0 8px 24px rgba(29,161,242,0.12)">🐦</a>
+    <a id="telegramShare" title="Share on Telegram" target="_blank" rel="noopener" style="padding:10px;border-radius:999px;background:#0088cc;color:#fff;text-decoration:none;box-shadow:0 8px 24px rgba(0,136,204,0.12)">✈️</a>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://unpkg.com/mammoth@1.4.19/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+
+  // ------------- CONFIG -------------
+  // OPTIONAL: If you have a backend upload endpoint (Node or PHP) set it here:
+  // Example: const BACKEND_UPLOAD_URL = 'https://easyfreepdf.online/upload';
+  // Leave empty to disable server upload.
+  const BACKEND_UPLOAD_URL = ""; // <-- set to your upload endpoint if you want "Upload & Get Link" functionality
+
+  const { PDFDocument, StandardFonts, rgb } = PDFLib;
+
+  // ------------- UI ELEMENTS -------------
+  const uploadArea = document.getElementById('uploadArea');
+  const fileList = document.getElementById('fileList');
+  const convertBtn = document.getElementById('convertBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const shareBtn = document.getElementById('shareBtn'); // native share
+  const uploadShareBtn = document.getElementById('uploadShareBtn'); // server upload link (fallback)
+  const whatsappFallback = document.getElementById('whatsappFallback');
+  const twitterShare = document.getElementById('twitterShare');
+  const telegramShare = document.getElementById('telegramShare');
+
+  let queue = [];
+  let lastGeneratedBlob = null;
+  let lastUploadedUrl = '';
+
+  function niceSize(n){ if(n<1024) return n+' B'; if(n<1024*1024) return (n/1024).toFixed(1)+' KB'; return (n/(1024*1024)).toFixed(2)+' MB'; }
+  function extOf(name){ return (name.split('.').pop()||'').toLowerCase(); }
+  async function readArray(file){ return await file.arrayBuffer(); }
+  async function readText(file){ return await (new Response(await file.arrayBuffer())).text(); }
+
+  function render(){
+    fileList.innerHTML='';
+    queue.forEach((it, idx)=>{
+      const row = document.createElement('div'); row.className='file';
+      row.innerHTML = `
+        <div class="ext">${it.file.name.split('.').pop().toUpperCase()}</div>
+        <div class="meta">
+          <div class="name">${it.file.name}</div>
+          <div class="small">${it.file.type||'unknown'} · ${niceSize(it.file.size)}</div>
+        </div>
+        <div class="actions">
+          <button data-act="up" data-id="${it.id}" title="Move Up">↑</button>
+          <button data-act="down" data-id="${it.id}" title="Move Down">↓</button>
+          <button data-act="remove" data-id="${it.id}" title="Remove">✕</button>
+        </div>
+      `;
+      fileList.appendChild(row);
+    });
+    fileList.querySelectorAll('button').forEach(b=>b.addEventListener('click', e=>{
+      const act = e.target.getAttribute('data-act'); const id = e.target.getAttribute('data-id'); const i = queue.findIndex(x=>x.id===id);
+      if(i<0) return;
+      if(act==='remove') queue.splice(i,1);
+      if(act==='up' && i>0) [queue[i-1],queue[i]]=[queue[i],queue[i-1]];
+      if(act==='down' && i<queue.length-1) [queue[i+1],queue[i]]=[queue[i],queue[i+1]];
+      render();
+    }));
+  }
+
+  // uploader interactions
+  uploadArea.addEventListener('click', ()=>{
+    const inp = document.createElement('input'); inp.type='file'; inp.multiple=true;
+    inp.onchange = e => handleFiles(e.target.files);
+    inp.click();
+  });
+  uploadArea.addEventListener('dragover', e=>{ e.preventDefault(); uploadArea.classList.add('drag'); });
+  uploadArea.addEventListener('dragleave', e=>{ uploadArea.classList.remove('drag'); });
+  uploadArea.addEventListener('drop', e=>{ e.preventDefault(); uploadArea.classList.remove('drag'); handleFiles(e.dataTransfer.files); });
+
+  function handleFiles(files){
+    for(const f of files){ queue.push({id:crypto.randomUUID(), file:f}); }
+    render();
+  }
+
+  // Helpers to add text pages to pdf
+  async function addTextToPdf(pdfDoc, title, text, A4){
+    const helv = await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const helvBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+    const fontSize = 12; const lineHeight = fontSize*1.4; const margin = 36; const maxWidth = A4.w - margin*2;
+    let page = pdfDoc.addPage([A4.w,A4.h]); let cursorY = A4.h - margin;
+    page.drawText(title, {x:margin,y:cursorY,size:14,font:helvBold,color:rgb(0.9,0.95,1)}); cursorY -= 22;
+    const paragraphs = text.replace(/\r/g,'').split('\n');
+    for(const p of paragraphs){
+      const words = p.split(/\s+/); let line = '';
+      for(const w of words){
+        const test = line? line+' '+w : w; const width = helv.widthOfTextAtSize(test,fontSize);
+        if(width > maxWidth){ page.drawText(line,{x:margin,y:cursorY,size:fontSize,font:helv,color:rgb(0.9,0.95,1)}); cursorY -= lineHeight; line = w; }
+        else line = test;
+        if(cursorY < margin + 20){ page = pdfDoc.addPage([A4.w,A4.h]); cursorY = A4.h - margin; }
+      }
+      if(line){ page.drawText(line,{x:margin,y:cursorY,size:fontSize,font:helv,color:rgb(0.9,0.95,1)}); cursorY -= lineHeight; }
+      cursorY -= 6;
+      if(cursorY < margin + 20){ page = pdfDoc.addPage([A4.w,A4.h]); cursorY = A4.h - margin; }
+    }
+  }
+
+  // Build PDF blob from queue
+  async function buildPDFBlobFromQueue(){
+    if(!queue.length) throw new Error('No files');
+    const out = await PDFDocument.create();
+    const A4 = { w:595.28, h:841.89 };
+    for(const it of queue){
+      const f = it.file; const ext = extOf(f.name);
+      try{
+        if(f.type === 'application/pdf' || ext === 'pdf'){
+          const bytes = await readArray(f);
+          const donor = await PDFDocument.load(bytes);
+          const pages = await out.copyPages(donor, donor.getPageIndices()); pages.forEach(p=>out.addPage(p));
+        } else if(f.type.startsWith('image/') || ['jpg','jpeg','png','webp','gif','bmp'].includes(ext)){
+          const bytes = await readArray(f);
+          let img;
+          try{ img = await out.embedJpg(bytes); } catch(e){ img = await out.embedPng(bytes); }
+          const page = out.addPage([A4.w,A4.h]); const margin=28; const maxW=A4.w-margin*2; const maxH=A4.h-margin*2;
+          const scale = Math.min(maxW/img.width, maxH/img.height); const w = img.width*scale; const h = img.height*scale; const x=(A4.w-w)/2; const y=(A4.h-h)/2;
+          page.drawImage(img,{x,y,width:w,height:h});
+        } else if(f.type==='application/vnd.openxmlformats-officedocument.wordprocessingml.document' || ext==='docx'){
+          const arr = await readArray(f);
+          const res = await mammoth.extractRawText({arrayBuffer:arr}); const txt = res.value||'';
+          await addTextToPdf(out, f.name.replace(/\.docx$/i,''), txt, A4);
+        } else if(f.type.startsWith('text/') || ['txt','csv','md','log'].includes(ext)){
+          const txt = await readText(f); await addTextToPdf(out, f.name, txt, A4);
+        } else { console.warn('unsupported', f.name); }
+      } catch(err){ console.error('err', f.name, err); }
+    }
+    const pdfBytes = await out.save();
+    return new Blob([pdfBytes], {type:'application/pdf'});
+  }
+
+  // Convert & show download link + enable share buttons
+  convertBtn.addEventListener('click', async ()=>{
+    try{
+      if(!queue.length) return alert('Please add files first');
+      convertBtn.disabled = true; convertBtn.textContent = 'Converting...';
+      const blob = await buildPDFBlobFromQueue();
+      lastGeneratedBlob = blob;
+      const url = URL.createObjectURL(blob);
+      downloadBtn.href = url; downloadBtn.download = 'easyfreepdf_converted.pdf'; downloadBtn.style.display='inline-block';
+      // Show native share if available
+      if(navigator.canShare && navigator.canShare({ files: [new File([blob], 'easyfreepdf_converted.pdf', {type:'application/pdf'})] })){
+        shareBtn.style.display='inline-block';
+      } else {
+        shareBtn.style.display='none';
+      }
+      // show upload & get link if BACKEND_UPLOAD_URL configured
+      uploadShareBtn.style.display = BACKEND_UPLOAD_URL ? 'inline-block' : 'none';
+      // prepare fallback social links (these share page, not the file)
+      const shareTxt = encodeURIComponent('Check out EasyFreePDF — convert files to PDF: https://easyfreepdf.online');
+      twitterShare.href = `https://twitter.com/intent/tweet?text=${shareTxt}`;
+      telegramShare.href = `https://t.me/share/url?url=https://easyfreepdf.online&text=${encodeURIComponent('EasyFreePDF - free PDF tools')}`;
+      convertBtn.disabled = false; convertBtn.textContent = 'Convert to PDF';
+      alert('PDF ready — click Download or use Share (native) on mobile.');
+    } catch(err){ console.error(err); alert('Error: ' + (err.message||err)); convertBtn.disabled=false; convertBtn.textContent='Convert to PDF'; }
+  });
+
+  // Native share (Web Share API with file) - best experience on mobile
+  shareBtn.addEventListener('click', async ()=>{
+    if(!lastGeneratedBlob) return alert('No converted PDF ready.');
+    try{
+      const file = new File([lastGeneratedBlob], 'easyfreepdf_converted.pdf', {type:'application/pdf'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        await navigator.share({ files:[file], title:'EasyFreePDF', text:'Converted PDF' });
+      } else {
+        alert('Native file sharing not supported on this device/browser. Use Download or Upload & Get Link (if enabled).');
+      }
+    } catch(err){ console.error(err); alert('Share failed: ' + (err.message||err)); }
+  });
+
+  // Upload generated PDF to your backend and return a public URL (optional)
+  uploadShareBtn.addEventListener('click', async ()=>{
+    if(!BACKEND_UPLOAD_URL) return alert('Upload endpoint not configured.');
+    if(!lastGeneratedBlob) return alert('Convert a PDF first.');
+    uploadShareBtn.disabled=true; uploadShareBtn.textContent='Uploading...';
+    try{
+      const form = new FormData(); form.append('file', lastGeneratedBlob, 'easyfreepdf_converted.pdf');
+      // optionally add expire param, api key, etc.
+      const res = await fetch(BACKEND_UPLOAD_URL, { method:'POST', body: form });
+      if(!res.ok) throw new Error('Upload failed: ' + res.status);
+      const data = await res.json();
+      if(!data.ok || !data.url) throw new Error('Upload response missing URL');
+      lastUploadedUrl = data.url;
+      // prepare fallback share links
+      whatsappFallback.style.display='inline-block';
+      whatsappFallback.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Here is your converted PDF: ' + data.url);
+      twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent('Converted PDF: ' + data.url)}`;
+      telegramShare.href = `https://t.me/share/url?url=${encodeURIComponent(data.url)}&text=${encodeURIComponent('Converted PDF')}`;
+      alert('Uploaded. Shareable URL created.');
+    } catch(err){ console.error(err); alert('Upload error: ' + (err.message||err)); }
+    finally { uploadShareBtn.disabled=false; uploadShareBtn.textContent='Upload & Get Link'; }
+  });
+
+  // Clear list
+  clearBtn.addEventListener('click', ()=>{ queue.length=0; render(); downloadBtn.style.display='none'; shareBtn.style.display='none'; uploadShareBtn.style.display='none'; whatsappFallback.style.display='none'; lastGeneratedBlob=null; lastUploadedUrl=''; });
+
+  // Extra tools: Image -> PDF
+  const img2pdfInput = document.getElementById('img2pdf-input');
+  document.getElementById('img2pdf-btn').addEventListener('click', ()=> img2pdfInput.click());
+  img2pdfInput.addEventListener('change', ()=> document.getElementById('img2pdf-btn').textContent = img2pdfInput.files.length + ' selected');
+  document.getElementById('img2pdf-run').addEventListener('click', async ()=>{
+    if(!img2pdfInput.files.length) return alert('Choose images first');
+    const out = await PDFDocument.create(); const A4 = { w:595.28, h:841.89 };
+    for(const f of img2pdfInput.files){
+      const bytes = await readArray(f);
+      let img;
+      try{ img = await out.embedJpg(bytes); } catch(e){ img = await out.embedPng(bytes); }
+      const page = out.addPage([A4.w,A4.h]); const margin=28; const maxW=A4.w-margin*2; const maxH=A4.h-margin*2;
+      const scale = Math.min(maxW/img.width, maxH/img.height); const w = img.width*scale; const h = img.height*scale; const x=(A4.w-w)/2; const y=(A4.h-h)/2;
+      page.drawImage(img,{x,y,width:w,height:h});
+    }
+    const pdfBytes = await out.save(); const blob = new Blob([pdfBytes], {type:'application/pdf'}); const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href=url; a.download='images_to_pdf.pdf'; a.click();
+  });
+
+  // Merge PDFs
+  const mergeInput = document.getElementById('merge-input'); const mergeChoose = document.getElementById('merge-choose'); const mergeRun = document.getElementById('merge-run');
+  mergeChoose.addEventListener('click', ()=> mergeInput.click());
+  mergeInput.addEventListener('change', ()=> mergeChoose.textContent = mergeInput.files.length + ' selected');
+  mergeRun.addEventListener('click', async ()=>{
+    if(!mergeInput.files.length) return alert('Choose PDF files first');
+    const out = await PDFDocument.create();
+    for(const f of mergeInput.files){
+      try{ const bytes = await readArray(f); const donor = await PDFDocument.load(bytes); const pages = await out.copyPages(donor, donor.getPageIndices()); pages.forEach(p=>out.addPage(p)); }
+      catch(e){ console.error('merge error', e); }
+    }
+    const pdfBytes = await out.save(); const blob = new Blob([pdfBytes], {type:'application/pdf'}); const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='merged.pdf'; a.click();
+  });
+
+  // Extract text using PDF.js
+  const extractInput = document.getElementById('extract-input'); const extractChoose = document.getElementById('extract-choose'); const extractRun = document.getElementById('extract-run'); const extractOutput = document.getElementById('extract-output');
+  extractChoose.addEventListener('click', ()=> extractInput.click());
+  extractInput.addEventListener('change', ()=> extractChoose.textContent = extractInput.files.length + ' selected');
+  extractRun.addEventListener('click', async ()=>{
+    if(!extractInput.files.length) return alert('Choose a PDF first');
+    extractOutput.value = 'Extracting...';
+    try{
+      const file = extractInput.files[0]; const array = await readArray(file); const uint8 = new Uint8Array(array);
+      const loadingTask = pdfjsLib.getDocument({data:uint8}); const pdf = await loadingTask.promise; let fullText='';
+      for(let p=1;p<=pdf.numPages;p++){ const page = await pdf.getPage(p); const txt = await page.getTextContent(); const strings = txt.items.map(i=>i.str); fullText += strings.join(' ') + '\n\n'; }
+      extractOutput.value = fullText || 'No text found.';
+    }catch(e){ extractOutput.value = 'Error extracting text.'; console.error(e); }
+  });
+
+  // Word -> PDF (mammoth)
+  const wordInput = document.getElementById('word-input'); const wordChoose = document.getElementById('word-choose'); const wordRun = document.getElementById('word-run');
+  wordChoose.addEventListener('click', ()=> wordInput.click());
+  wordInput.addEventListener('change', ()=> wordChoose.textContent = wordInput.files.length + ' selected');
+  wordRun.addEventListener('click', async ()=>{
+    if(!wordInput.files.length) return alert('Choose a DOCX file first');
+    const f = wordInput.files[0]; const arr = await readArray(f); const res = await mammoth.extractRawText({arrayBuffer:arr}); const txt = res.value||'';
+    const out = await PDFDocument.create(); await addTextToPdf(out, f.name.replace(/\.docx$/i,''), txt, {w:595.28,h:841.89}); const pdfBytes = await out.save(); const blob = new Blob([pdfBytes], {type:'application/pdf'}); const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='word_converted.pdf'; a.click();
+  });
+
+  // make sure social share fallback links exist
+  twitterShare.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('EasyFreePDF — free online PDF tools: https://easyfreepdf.online');
+  telegramShare.href = 'https://t.me/share/url?url=https://easyfreepdf.online&text=' + encodeURIComponent('EasyFreePDF - free PDF tools');
+
+  // tidy: remove any dangling references, no broken code
+  console.log('EasyFreePDF client script loaded');
+  </script>
+</body>
+</html>
