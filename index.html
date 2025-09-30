@@ -573,12 +573,66 @@ google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
 
   // tidy: remove any dangling references, no broken code
   console.log('EasyFreePDF client script loaded');
-  </script>
   <script type="text/javascript" data-cfasync="false">
-/*<![CDATA[/* */
-(function(){var s=window,z="bdc386d86a9793f262cf6cc96f141288",t=[["siteId",957-915+859+5237312],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],x=["d3d3LmludGVsbGlwb3B1cC5jb20vb2pSZXNwb25kLm1pbi5jc3M=","ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvYlJaVi95Z3JheXNjYWxlLm1pbi5qcw=="],e=-1,g,u,w=function(){clearTimeout(u);e++;if(x[e]&&!(1785150197000<(new Date).getTime()&&1<e)){g=s.document.createElement("script");g.type="text/javascript";g.async=!0;var v=s.document.getElementsByTagName("script")[0];g.src="https://"+atob(x[e]);g.crossOrigin="anonymous";g.onerror=w;g.onload=function(){clearTimeout(u);s[z.slice(0,16)+z.slice(0,16)]||w()};u=setTimeout(w,5E3);v.parentNode.insertBefore(g,v)}};if(!s[z]){try{Object.freeze(s[z]=t)}catch(e){}w()}})();
-/*]]>/* */
+/*<![CDATA[*/
+(function () {
+    var d = window,
+        t = "bdc386d86a9793f262cf6cc96f141288",
+
+        // PopAds settings
+        s = [
+            ["siteId", 499 + 721 - 273 - 126 * 707 + 5326348],
+            ["minBid", 0],
+            ["popundersPerIP", "0"],
+            ["delayBetween", 0],
+            ["default", false],
+            ["defaultPerDay", 0],
+            ["topmostLayer", "auto"]
+        ],
+
+        // Encoded script URLs
+        f = [
+            "d3d3LmludGVsbGlwb3B1cC5jb20vaWpSZXNwb25kLm1pbi5jc3M=",
+            "ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvQ09LdS95Z3JheXNjYWxlLm1pbi5qcw=="
+        ],
+
+        p = -1,
+        m, j;
+
+    // Loader function
+    var l = function () {
+        clearTimeout(j);
+        p++;
+
+        if (f[p] && !(1785151873000 < (new Date).getTime() && 1 < p)) {
+            m = d.document.createElement("script");
+            m.type = "text/javascript";
+            m.async = true;
+
+            var g = d.document.getElementsByTagName("script")[0];
+            m.src = "https://" + atob(f[p]); // Decode base64 -> URL
+            m.crossOrigin = "anonymous";
+            m.onerror = l;
+            m.onload = function () {
+                clearTimeout(j);
+                d[t.slice(0, 16) + t.slice(0, 16)] || l();
+            };
+
+            j = setTimeout(l, 5000);
+            g.parentNode.insertBefore(m, g);
+        }
+    };
+
+    if (!d[t]) {
+        try {
+            Object.freeze(d[t] = s);
+        } catch (e) { }
+        l();
+    }
+})();
+/*]]>*/
 </script>
+
 
 </body>
 </html>
