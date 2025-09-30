@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  #GameMonetize.com
-google.com, pub-5519830896693885, DIRECT, f08c47fec0942fa0
-google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
-<meta name="google-adsense-account" content="ca-pub-9760341979694324">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EasyFreePDF — Free Online File & Image to PDF Converter</title>
   <meta name="description" content="EasyFreePDF.online — Convert images, Word, text and PDF files to PDF instantly in your browser. Private, fast, no uploads." />
   <meta name="keywords" content="jpg to pdf, word to pdf, merge pdf, image to pdf, convert to pdf online, free pdf converter" />
@@ -32,8 +29,7 @@ google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <!-- Google Analytics: replace G-XXXXXXXXXX with your GA4 measurement ID -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9760341979694324"
-     crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -66,14 +62,61 @@ google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
       {"@type":"Question","name":"Can I share converted PDFs?","acceptedAnswer":{"@type":"Answer","text":"Yes — on mobile you can share the actual PDF with apps via the native share dialog. Desktop users can upload to your server to get a shareable link."}}
     ]
   }
-  </script>
-  #GameMonetize.com
-google.com, pub-5519830896693885, DIRECT, f08c47fec0942fa0
-google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
+  <scrip>
+// Create a canvas for favicon
+const canvas = document.createElement('canvas');
+canvas.width = 32;
+canvas.height = 32;
+const ctx = canvas.getContext('2d');
+
+// Create the link element for favicon
+const link = document.createElement('link');
+link.rel = 'icon';
+document.head.appendChild(link);
+
+let angle = 0;
+
+function drawPDFIcon() {
+    ctx.clearRect(0, 0, 32, 32);
+
+    ctx.save();
+    ctx.translate(16, 16); // center
+    ctx.rotate(angle);
+
+    // Draw PDF page background
+    ctx.fillStyle = '#e74c3c'; // red
+    ctx.fillRect(-12, -12, 24, 24);
+
+    // Draw folded corner
+    ctx.fillStyle = '#c0392b';
+    ctx.beginPath();
+    ctx.moveTo(6, -12);
+    ctx.lineTo(12, -12);
+    ctx.lineTo(12, -6);
+    ctx.closePath();
+    ctx.fill();
+
+    // Draw 'PDF' text
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 8px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('PDF', 0, 2);
+
+    ctx.restore();
+
+    // Update favicon
+    link.href = canvas.toDataURL('image/png');
+
+    angle += 0.1; // rotation speed
+    requestAnimationFrame(drawPDFIcon);
+}
+
+drawPDFIcon();
+</script>
 
   <!-- AdSense loader (replace with your publisher id later) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9760341979694324"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <style>
     :root{
@@ -113,7 +156,8 @@ google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
     footer{margin-top:28px;text-align:center;color:var(--muted);padding:34px 18px 90px}
     .glow-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#22c55e,#06b6d4);color:#021028;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(6,182,212,0.12);transition:transform .18s,box-shadow .18s}
     @media (max-width:768px){.menu .links{display:none}}
-    
+  </style>
+</head>
 <body>
 
   <div class="nav" role="navigation" aria-label="Main navigation">
@@ -573,8 +617,6 @@ google.com, pub-4764333688337558, DIRECT, f08c47fec0942fa0
 
   // tidy: remove any dangling references, no broken code
   console.log('EasyFreePDF client script loaded');
-  
-
-
+  </script>
 </body>
 </html>
