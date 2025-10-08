@@ -1,117 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-  <!-- Header -->
-  <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="EasyFreePDF Logo">
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#convert">Convert</a>
-      <a href="#how-it-works">How it Works</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="#convert" class="btn-primary">Start Converting</a>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Convert Your Files to PDF Instantly</h1>
-    <p>Free, fast, secure, and professional online PDF conversion for JPG, PNG, DOCX, TXT and more.</p>
-    <a href="#convert" class="btn-primary">Upload & Convert Now</a>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <div class="feature-card">
-      <h3>Fast & Reliable</h3>
-      <p>Convert files instantly with a modern, high-performance engine that respects your time.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Secure & Private</h3>
-      <p>Your files are safe. All uploads are encrypted and removed after conversion.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Multi-Format Support</h3>
-      <p>Supports JPG, PNG, DOCX, TXT and other popular formats for seamless PDF creation.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Batch Conversion</h3>
-      <p>Convert multiple files at once with ease—perfect for professionals and teams.</p>
-    </div>
-  </section>
-
-  <!-- Convert Section -->
-  <section id="convert" class="convert-section">
-    <h2>Upload Your Files</h2>
-    <label class="file-input">
-      Drag & Drop Files Here or Click to Upload
-      <input type="file" multiple>
-    </label>
-    <div style="margin-top:20px;">
-      <button class="btn-primary">Convert Now</button>
-    </div>
-  </section>
-
-  <!-- How it Works Section -->
-  <section id="how-it-works" class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="how-steps">
-      <div class="step">
-        <h4>Step 1</h4>
-        <p>Upload your files using the simple drag & drop interface.</p>
-      </div>
-      <div class="step">
-        <h4>Step 2</h4>
-        <p>Our system converts your files to PDF instantly and securely.</p>
-      </div>
-      <div class="step">
-        <h4>Step 3</h4>
-        <p>Download your converted PDFs in one click or batch format.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 EasyFreePDF. All rights reserved.</p>
-    <p>Follow us on <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
-  </footer>
-
-  <!-- Optional: Background Particle Animation for Premium AI Feel -->
-  <canvas id="particles" style="position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
-
-  <script>
-    // Simple particle animation
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = [];
-    for(let i=0;i<100;i++){
-      particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*2+1, d:Math.random()*2});
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional PDF conversion online.">
+  <meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
+  <meta name="author" content="easyfreepdf.online">
+  <title>PDF Converter Online - Fast & Free | easyfreepdf.online</title>
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
     }
 
-    function animate(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      for(let i=0;i<particles.length;i++){
-        let p = particles[i];
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2,false);
-        ctx.fillStyle = "rgba(30,144,255,0.6)";
-        ctx.fill();
-        p.y += p.d;
-        if(p.y>canvas.height)p.y=0;
+    body {
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      padding: 15px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: #1E90FF;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #0077cc;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(135deg, #1E90FF 0%, #00C49A 100%);
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 20px;
+      padding: 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .feature-card p {
+      color: #666;
+    }
+
+    /* How it works */
+    .how-it-works {
+      background: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .how-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .step {
+      max-width: 250px;
+      background: #f0f4f8;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .step h4 {
+      margin-bottom: 15px;
+    }
+
+    /* Convert section */
+    .convert-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .file-input {
+      border: 2px dashed #1E90FF;
+      padding: 40px;
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .file-input:hover {
+      background: #f0f8ff;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #1E90FF;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
       }
-      requestAnimationFrame(animate);
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 5px 10px;
+        font-size: 14px;
+      }
+
+      .btn-primary {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 60px 15px 40px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .features {
+        padding: 30px 15px;
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 20px;
+      }
+
+      .how-it-works {
+        padding: 30px 15px;
+      }
+
+      .how-steps {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .step {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .convert-section {
+        padding: 30px 15px;
+      }
+
+      .file-input {
+        padding: 30px;
+      }
     }
-    animate();
-  </script>
-</body>
+  </style>
+</head>
 
 
 
-<body>
+
 	<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
 <script>
     window.ezstandalone = window.ezstandalone || {};
