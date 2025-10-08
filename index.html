@@ -1,260 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-<script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
+  <!-- Charset & Viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional PDF conversion online.">
-  <meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
+
+  <!-- Title & Meta -->
+  <title>Fast & Free PDF Converter Online | easyfreepdf.online</title>
+  <meta name="description" content="Convert JPG, PNG, DOCX, TXT, and more to PDF instantly. Free, secure, and professional online PDF converter.">
+  <meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter, PDF maker online">
   <meta name="author" content="easyfreepdf.online">
-  <title>PDF Converter Online - Fast & Free | easyfreepdf.online</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" type="image/x-icon">
+
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
+
+  <!-- Structured Data (FAQ Schema for SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert files to PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your file (JPG, PNG, DOCX, TXT, etc.) and click convert. Your PDF will be ready instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this PDF converter free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! EasyFreePDF.online offers free PDF conversion without hidden charges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. All files are securely processed and deleted after conversion."
+        }
+      }
+    ]
   }
+  </script>
 
-  body {
-    background: #f7f9fc;
-    color: #333;
-    line-height: 1.6;
-  }
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Fast & Free PDF Converter Online | easyfreepdf.online">
+  <meta property="og:description" content="Convert JPG, PNG, DOCX, TXT, and more to PDF instantly. Free, secure, and professional online PDF converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://easyfreepdf.online">
+  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s">
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fast & Free PDF Converter Online | easyfreepdf.online">
+  <meta name="twitter:description" content="Convert JPG, PNG, DOCX, TXT, and more to PDF instantly. Free, secure, and professional online PDF converter.">
+  <meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s">
 
-  /* Header */
-  header {
-    background: #fff;
-    padding: 15px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://easyfreepdf.online">
 
-  header img {
-    height: 40px;
-  }
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-  nav a {
-    margin: 0 15px;
-    font-weight: 600;
-  }
+  <!-- Lazy Load JS for Performance -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let imgs = document.querySelectorAll("img");
+      imgs.forEach(img => { img.loading = "lazy"; });
+    });
+  </script>
 
-  .btn-primary {
-    background: #1E90FF;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.3s;
-    white-space: nowrap;
-  }
-
-  .btn-primary:hover {
-    background: #0077cc;
-  }
-
-  /* Hero */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px 60px;
-    background: linear-gradient(135deg, #1E90FF 0%, #00C49A 100%);
-    color: #fff;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-
-  .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-
-  /* Features */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 50px;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .feature-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .feature-card h3 {
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .feature-card p {
-    color: #666;
-  }
-
-  /* How it works */
-  .how-it-works {
-    background: #fff;
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  .how-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-  }
-
-  .step {
-    max-width: 250px;
-    background: #f0f4f8;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  }
-
-  .step h4 {
-    margin-bottom: 15px;
-  }
-
-  /* Convert section */
-  .convert-section {
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  .file-input {
-    border: 2px dashed #1E90FF;
-    padding: 40px;
-    border-radius: 12px;
-    background: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .file-input:hover {
-    background: #f0f8ff;
-  }
-
-  input[type="file"] {
-    display: none;
-  }
-
-  /* Footer */
-  footer {
-    background: #222;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  footer a {
-    color: #1E90FF;
-  }
-
-  /* ✅ Responsive Design for Mobiles */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      padding: 15px 20px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    nav a {
-      margin: 5px 10px;
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      padding: 10px 18px;
-      font-size: 14px;
-    }
-
-    .hero {
-      padding: 60px 15px 40px;
-    }
-
-    .hero h1 {
-      font-size: 32px;
-    }
-
-    .hero p {
-      font-size: 16px;
-    }
-
-    .features {
-      padding: 30px 15px;
-      grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-      padding: 20px;
-    }
-
-    .how-it-works {
-      padding: 30px 15px;
-    }
-
-    .how-steps {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .step {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    .convert-section {
-      padding: 30px 15px;
-    }
-
-    .file-input {
-      padding: 30px;
-    }
-  }
-</style>
+  <!-- Analytics (Optional for Traffic Tracking) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA_ID');
+  </script> -->
 
 </head>
+
 <body>
 	<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
 <script>
