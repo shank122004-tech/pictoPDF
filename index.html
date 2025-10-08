@@ -1,80 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <!-- Header -->
+  <header>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="EasyFreePDF Logo">
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#convert">Convert</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#convert" class="btn-primary">Start Converting</a>
+  </header>
 
-  <!-- SEO Meta -->
-  <title>PDF Converter Online - Fast, Free & Secure | easyfreepdf.online</title>
-  <meta name="description" content="Convert JPG, PNG, DOCX, TXT and more to PDF instantly. Free, fast, secure, and professional online PDF conversion tool.">
-  <meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
-  <meta name="author" content="easyfreepdf.online">
-  <link rel="canonical" href="https://easyfreepdf.online">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Convert Your Files to PDF Instantly</h1>
+    <p>Free, fast, secure, and professional online PDF conversion for JPG, PNG, DOCX, TXT and more.</p>
+    <a href="#convert" class="btn-primary">Upload & Convert Now</a>
+  </section>
 
-  <!-- Open Graph / Social Meta -->
-  <meta property="og:title" content="PDF Converter Online - Fast, Free & Secure | easyfreepdf.online">
-  <meta property="og:description" content="Convert files to PDF online instantly. Free, fast, secure, professional PDF conversion.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://easyfreepdf.online">
-  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s">
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="feature-card">
+      <h3>Fast & Reliable</h3>
+      <p>Convert files instantly with a modern, high-performance engine that respects your time.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Secure & Private</h3>
+      <p>Your files are safe. All uploads are encrypted and removed after conversion.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Multi-Format Support</h3>
+      <p>Supports JPG, PNG, DOCX, TXT and other popular formats for seamless PDF creation.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Batch Conversion</h3>
+      <p>Convert multiple files at once with ease—perfect for professionals and teams.</p>
+    </div>
+  </section>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PDF Converter Online - Fast, Free & Secure | easyfreepdf.online">
-  <meta name="twitter:description" content="Convert files to PDF online instantly. Free, fast, secure, professional PDF conversion.">
-  <meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s">
+  <!-- Convert Section -->
+  <section id="convert" class="convert-section">
+    <h2>Upload Your Files</h2>
+    <label class="file-input">
+      Drag & Drop Files Here or Click to Upload
+      <input type="file" multiple>
+    </label>
+    <div style="margin-top:20px;">
+      <button class="btn-primary">Convert Now</button>
+    </div>
+  </section>
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" type="image/x-icon">
+  <!-- How it Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="how-steps">
+      <div class="step">
+        <h4>Step 1</h4>
+        <p>Upload your files using the simple drag & drop interface.</p>
+      </div>
+      <div class="step">
+        <h4>Step 2</h4>
+        <p>Our system converts your files to PDF instantly and securely.</p>
+      </div>
+      <div class="step">
+        <h4>Step 3</h4>
+        <p>Download your converted PDFs in one click or batch format.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Structured Data (Rich Snippets) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I convert JPG to PDF?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Upload your JPG on easyfreepdf.online and click convert. PDF ready instantly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all conversions are completely free without limits."
-        }
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EasyFreePDF. All rights reserved.</p>
+    <p>Follow us on <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
+  </footer>
+
+  <!-- Optional: Background Particle Animation for Premium AI Feel -->
+  <canvas id="particles" style="position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
+
+  <script>
+    // Simple particle animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for(let i=0;i<100;i++){
+      particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*2+1, d:Math.random()*2});
+    }
+
+    function animate(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i=0;i<particles.length;i++){
+        let p = particles[i];
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2,false);
+        ctx.fillStyle = "rgba(30,144,255,0.6)";
+        ctx.fill();
+        p.y += p.d;
+        if(p.y>canvas.height)p.y=0;
       }
-    ]
-  }
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
+</body>
 
-  <!-- Fast Indexing / Sitemap Ping -->
-  <script>
-    (function() {
-      fetch('https://www.google.com/ping?sitemap=https://easyfreepdf.online/sitemap.xml');
-      fetch('https://www.bing.com/webmaster/ping.aspx?siteMap=https://easyfreepdf.online/sitemap.xml');
-    })();
-  </script>
-
-  <!-- Lazy Load & Preload Fonts for Speed -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Optional Analytics for Traffic Growth -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXXXXXX-X');
-  </script>
-</head>
 
 
 <body>
@@ -272,5 +306,94 @@
 <script type="text/javascript" src="//www.highperformanceformat.com/56e6be46bb82eb4300f0884500eab71f/invoke.js"></script>
 </script>
 <script type='text/javascript' src='//pl27798652.revenuecpmgate.com/d6/d7/a3/d6d7a35b096b5521bce6eade4c150da2.js'></script>
+<!-- Ultra SEO & Traffic Booster - Drop before </body> -->
+<script>
+(function(){
+    const site = {
+        domain: "https://easyfreepdf.online",
+        baseTitle: "EasyFreePDF - Convert Files to PDF",
+        baseDescription: "Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional online PDF converter.",
+        keywords: ["PDF converter","JPG to PDF","PNG to PDF","DOCX to PDF","TXT to PDF","online PDF converter","free PDF conversion","batch PDF converter"],
+        totalPages: 200 // Internal pages to simulate
+    };
+
+    // ===== 1. Dynamic Internal Pages =====
+    const pageContainer = document.createElement("div");
+    pageContainer.style.display = "none"; 
+    document.body.appendChild(pageContainer);
+
+    for(let i=1; i<=site.totalPages; i++){
+        const page = document.createElement("div");
+        page.className = "internal-page";
+        page.innerHTML = `
+            <h1>${site.baseTitle} - Page ${i}</h1>
+            <p>${site.baseDescription} - Page ${i}</p>
+            <a href="${site.domain}/page${i}">Go to Page ${i}</a>
+        `;
+        pageContainer.appendChild(page);
+    }
+
+    console.log(`✅ ${site.totalPages} internal pages generated`);
+
+    // ===== 2. Dynamic Sitemap Generation & Ping =====
+    let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>`;
+    sitemapXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    for(let i=1; i<=site.totalPages; i++){
+        sitemapXml += `
+            <url>
+                <loc>${site.domain}/page${i}</loc>
+                <changefreq>daily</changefreq>
+                <priority>0.9</priority>
+            </url>
+        `;
+    }
+    sitemapXml += `</urlset>`;
+
+    const blob = new Blob([sitemapXml], {type: "application/xml"});
+    const sitemapUrl = URL.createObjectURL(blob);
+
+    function pingSearchEngines() {
+        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`).catch(()=>{});
+        fetch(`https://www.bing.com/webmaster/ping.aspx?siteMap=${sitemapUrl}`).catch(()=>{});
+        console.log("✅ Dynamic sitemap pinged to Google & Bing");
+    }
+
+    pingSearchEngines();
+
+    // ===== 3. Automated Internal Link Boosting =====
+    let day = 1;
+    const interval = setInterval(() => {
+        if(day > 15){
+            clearInterval(interval);
+            console.log("🎯 15-day internal link booster complete");
+            return;
+        }
+        pingSearchEngines();
+        document.querySelectorAll(".internal-page a").forEach(a => a.click()); // Simulate internal crawling
+        day++;
+    }, 24*60*60*1000); // every 24 hours
+
+    // ===== 4. Dynamic Meta Tags Injection =====
+    const metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content = site.baseDescription;
+    document.head.appendChild(metaDescription);
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    metaKeywords.content = site.keywords.join(", ");
+    document.head.appendChild(metaKeywords);
+
+    console.log("✅ Meta tags injected for SEO optimization");
+
+    // ===== 5. Optional: Daily SEO Refresh =====
+    setInterval(() => {
+        document.title = `${site.baseTitle} - ${new Date().toDateString()}`;
+        console.log("🔄 Daily SEO refresh applied");
+    }, 24*60*60*1000);
+
+})();
+</script>
+	
 </body>
 </html>
