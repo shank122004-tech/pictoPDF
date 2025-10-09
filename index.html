@@ -407,106 +407,24 @@
         ezstandalone.showAds(101);
     });
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image to PDF Converter</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 50px; background: #f2f2f2; }
-    .convert-section { background: white; padding: 30px; border-radius: 12px; text-align: center; width: 400px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .file-input { border: 2px dashed #999; padding: 30px; cursor: pointer; border-radius: 10px; background: #fafafa; }
-    .file-input.dragover { border-color: #007bff; background: #e6f0ff; }
-    #fileList { margin-top: 15px; font-size: 14px; }
-    .btn-primary { margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
-    .btn-primary:hover { background: #0056b3; }
-  </style>
-</head>
-<body>
-
 <section id="convert" class="convert-section">
-  <h2>Convert Your Images to PDF</h2>
-  <label class="file-input" id="dropZone">
+  <h2>Convert Your Files Now</h2>
+  <label class="file-input">
     <p>Drag & drop files here or click to select</p>
-    <input type="file" id="fileInput" multiple accept="image/*" hidden>
+    <input type="file" id="fileInput" multiple>
   </label>
-  <div id="fileList"></div>
-  <button class="btn-primary" onclick="convertFiles()">Convert to PDF</button>
+  <div id="fileList" style="margin-top:20px;"></div>
+  <button class="btn-primary" style="margin-top:20px;" onclick="convertFiles()">Convert to PDF</button>
 </section>
-
-<script>
-  const dropZone = document.getElementById('dropZone');
-  const fileInput = document.getElementById('fileInput');
-  const fileList = document.getElementById('fileList');
-  let files = [];
-
-  dropZone.addEventListener('click', () => fileInput.click());
-
-  fileInput.addEventListener('change', (e) => {
-    files = [...e.target.files];
-    displayFiles();
-  });
-
-  dropZone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    dropZone.classList.add('dragover');
-  });
-
-  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
-
-  dropZone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    dropZone.classList.remove('dragover');
-    files = [...e.dataTransfer.files];
-    displayFiles();
-  });
-
-  function displayFiles() {
-    fileList.innerHTML = files.map(f => `<div>📄 ${f.name}</div>`).join('');
-  }
-
-  async function convertFiles() {
-    if (files.length === 0) {
-      alert("Please upload some images first!");
-      return;
-    }
-
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
-
-    for (let i = 0; i < files.length; i++) {
-      const imgData = await toBase64(files[i]);
-      const img = new Image();
-      img.src = imgData;
-      await new Promise(resolve => img.onload = resolve);
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const pageHeight = pdf.internal.pageSize.getHeight();
-      const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
-      const imgWidth = img.width * ratio;
-      const imgHeight = img.height * ratio;
-
-      if (i > 0) pdf.addPage();
-      pdf.addImage(imgData, 'JPEG', (pageWidth - imgWidth) / 2, (pageHeight - imgHeight) / 2, imgWidth, imgHeight);
-    }
-
-    pdf.save('converted.pdf');
-  }
-
-  function toBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-      reader.readAsDataURL(file);
-    });
-  }
+	<script type="text/javascript">
+	atOptions = {
+		'key' : '1b18b0da71a63265932cf99efdedaa26',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
 </script>
-
-</body>
-</html>
-
 <script type="text/javascript" src="//www.highperformanceformat.com/1b18b0da71a63265932cf99efdedaa26/invoke.js"></script>
 <script type="text/javascript" src="//www.highperformanceformat.com/56e6be46bb82eb4300f0884500eab71f/invoke.js"></script>
 <div id="ezoic-pub-ad-placeholder-101"></div>
@@ -671,3 +589,4 @@ l.parentNode.insertBefore(s, l);
 	
 </body>
 </html>
+
