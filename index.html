@@ -407,15 +407,84 @@
         ezstandalone.showAds(101);
     });
 </script>
-<section id="convert" class="convert-section">
-  <h2>Convert Your Files Now</h2>
-  <label class="file-input">
+<!-- Drag & Drop PDF Converter Start -->
+<div class="convert-section">
+  <h2>Convert Your Files to PDF</h2>
+  <div class="file-drop" id="fileDrop">
     <p>Drag & drop files here or click to select</p>
-    <input type="file" id="fileInput" multiple>
-  </label>
+    <input type="file" id="fileInput" multiple style="display:none" accept="image/*,text/plain">
+  </div>
   <div id="fileList" style="margin-top:20px;"></div>
-  <button class="btn-primary" style="margin-top:20px;" onclick="convertFiles()">Convert to PDF</button>
-</section>
+  <button class="btn-primary" id="convertBtn" style="margin-top:20px;">Convert to PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const fileDrop = document.getElementById('fileDrop');
+const fileInput = document.getElementById('fileInput');
+const fileList = document.getElementById('fileList');
+const convertBtn = document.getElementById('convertBtn');
+let filesToConvert = [];
+
+// Drag & drop functionality
+fileDrop.addEventListener('click', () => fileInput.click());
+fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('dragover'); });
+fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
+fileDrop.addEventListener('drop', e => { e.preventDefault(); fileDrop.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
+fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+function handleFiles(files) {
+  filesToConvert = Array.from(files);
+  fileList.innerHTML = '';
+  filesToConvert.forEach(file => {
+    const div = document.createElement('div');
+    div.textContent = file.name;
+    div.classList.add('file-item');
+    fileList.appendChild(div);
+  });
+}
+
+convertBtn.addEventListener('click', async () => {
+  if (filesToConvert.length === 0) { alert('Please select files first!'); return; }
+  const { jsPDF } = window.jspdf;
+
+  for (const file of filesToConvert) {
+    const pdf = new jsPDF();
+    const nameWithoutExt = file.name.split('.').slice(0,-1).join('.') || file.name;
+
+    if (file.type.startsWith('image/')) {
+      const imgData = await readFileAsDataURL(file);
+      const img = new Image();
+      img.src = imgData;
+      await new Promise(r => img.onload = r);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
+      const imgWidth = img.width * ratio;
+      const imgHeight = img.height * ratio;
+      pdf.addImage(imgData, 'JPEG', (pageWidth-imgWidth)/2, (pageHeight-imgHeight)/2, imgWidth, imgHeight);
+      pdf.save(`${nameWithoutExt}.pdf`);
+    } else if (file.type === 'text/plain') {
+      const text = await file.text();
+      pdf.text(pdf.splitTextToSize(text, 180), 10, 10);
+      pdf.save(`${nameWithoutExt}.pdf`);
+    } else {
+      alert(`Unsupported file type: ${file.name}`);
+    }
+  }
+});
+
+function readFileAsDataURL(file) {
+  return new Promise((resolve,reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+</script>
+<!-- Drag & Drop PDF Converter End -->
+
 	<script type="text/javascript">
 	atOptions = {
 		'key' : '1b18b0da71a63265932cf99efdedaa26',
