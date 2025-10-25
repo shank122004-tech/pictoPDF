@@ -1,440 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional PDF conversion online.">
-  <meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
-  <meta name="author" content="easyfreepdf.online">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="PDF Converter Online - Fast & Free | easyfreepdf.online">
-  <meta property="og:description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure online PDF conversion.">
-  <meta property="og:url" content="https://easyfreepdf.online">
-  <meta property="og:image" content="https://easyfreepdf.online/path-to-your-logo.png">
-  <meta property="og:site_name" content="EasyFreePDF">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PDF Converter Online - Fast & Free | easyfreepdf.online">
-  <meta name="twitter:description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure online PDF conversion.">
-  <meta name="twitter:image" content="https://easyfreepdf.online/path-to-your-logo.png">
-  <meta name="twitter:site" content="@easyfreepdf">
-
-  <title>PDF Converter Online - Fast & Free | easyfreepdf.online</title>
-  <link rel="icon"easyfreepdf.online (2)">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "EasyFreePDF",
-    "url": "https://easyfreepdf.online",
-    "description": "Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure online PDF conversion.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "easyfreepdf.online",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "easyfreepdf.online/path-to-your-logo.png"
-      }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://easyfreepdf.online/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "inLanguage": ["en-US","de-DE","en-GB"]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "PDF Converter Online – Free & Fast",
-    "url": "https://easyfreepdf.online",
-    "description": "Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Fast, free, and secure online PDF converter available worldwide.",
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://easyfreepdf.online"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "PDF Converter",
-          "item": "https://easyfreepdf.online/#convert"
-        }
-      ]
-    },
-    "inLanguage": "en-US"
-  }
-  </script>
-</head>
-
-  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background: #f7f9fc;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Header */
-    header {
-      background: #fff;
-      padding: 15px 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    header img {
-      height: 40px;
-    }
-
-    nav a {
-      margin: 0 15px;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: #1E90FF;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: 0.3s;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      background: #0077cc;
-    }
-
-    /* Hero */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 20px 60px;
-      background: linear-gradient(135deg, #1E90FF 0%, #00C49A 100%);
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 20px;
-      padding: 50px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .feature-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-card h3 {
-      margin-bottom: 15px;
-      font-size: 20px;
-    }
-
-    .feature-card p {
-      color: #666;
-    }
-
-    /* How it works */
-    .how-it-works {
-      background: #fff;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .how-steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .step {
-      max-width: 250px;
-      background: #f0f4f8;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
-
-    .step h4 {
-      margin-bottom: 15px;
-    }
-
-    /* Convert section */
-    .convert-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .file-input {
-      border: 2px dashed #1E90FF;
-      padding: 40px;
-      border-radius: 12px;
-      background: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .file-input:hover {
-      background: #f0f8ff;
-    }
-
-    input[type="file"] {
-      display: none;
-    }
-
-    /* Footer */
-    footer {
-      background: #222;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    footer a {
-      color: #1E90FF;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 15px 20px;
-      }
-
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      nav a {
-        margin: 5px 10px;
-        font-size: 14px;
-      }
-
-      .btn-primary {
-        padding: 10px 18px;
-        font-size: 14px;
-      }
-
-      .hero {
-        padding: 60px 15px 40px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .features {
-        padding: 30px 15px;
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card {
-        padding: 20px;
-      }
-
-      .how-it-works {
-        padding: 30px 15px;
-      }
-
-      .how-steps {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .step {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      .convert-section {
-        padding: 30px 15px;
-      }
-
-      .file-input {
-        padding: 30px;
-      }
-    }
-  </style>
-</head>
-
-
-
-
-	<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-<script>
-    window.ezstandalone = window.ezstandalone || {};
-    ezstandalone.cmd = ezstandalone.cmd || [];
-</script>
-
-<header class="mobile-header">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="YourBrand Logo">
-  <nav>
-    <a href="#features">Are</a>
-    <a href="#how">You</a>
-    <a href="#convert">Happy</a>
-    <a href="#contact">In Your Life</a>
-  </nav>
-  <a href="#convert" class="btn-primary">Scroll Down to Convert</a>
-</header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure online PDF conversion.">
+<meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
+<meta name="author" content="easyfreepdf.online">
+<title>PDF Converter Online - Fast & Free | easyfreepdf.online</title>
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* Hide header on desktop */
-  .mobile-header {
-    display: none;
-  }
+* { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
+body { background:#f7f9fc; color:#333; line-height:1.6; }
+a { text-decoration:none; color:inherit; }
 
-  /* Show header only on mobile */
-  @media (max-width: 768px) {
-    .mobile-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 15px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+/* Header */
+header { background:#fff; padding:15px 50px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:10; flex-wrap:wrap; gap:10px; }
+header img { height:40px; }
+nav a { margin:0 15px; font-weight:600; }
+.btn-primary { background:#1E90FF; color:#fff; padding:12px 25px; border-radius:8px; font-weight:600; transition:0.3s; white-space:nowrap; }
+.btn-primary:hover { background:#0077cc; }
 
-    .mobile-header img {
-      max-width: 140px;
-      margin-bottom: 10px;
-    }
+/* Hero */
+.hero { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 20px 60px; background:linear-gradient(135deg, #1E90FF 0%, #00C49A 100%); color:#fff; }
+.hero h1 { font-size:48px; margin-bottom:20px; }
+.hero p { font-size:20px; margin-bottom:30px; }
 
-    .mobile-header nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+/* Features */
+.features { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:50px; max-width:1200px; margin:auto; }
+.feature-card { background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.1); transition:0.3s; }
+.feature-card:hover { transform:translateY(-5px); }
+.feature-card h3 { margin-bottom:15px; font-size:20px; }
+.feature-card p { color:#666; }
 
-    .mobile-header nav a {
-      text-decoration: none;
-      color: #333;
-      font-size: 14px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: #f5f5f5;
-    }
+/* How it works */
+.how-it-works { background:#fff; padding:50px 20px; text-align:center; }
+.how-steps { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
+.step { max-width:250px; background:#f0f4f8; border-radius:12px; padding:25px; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+.step h4 { margin-bottom:15px; }
 
-    .mobile-header nav a:hover {
-      background: #ddd;
-    }
+/* Convert section */
+.convert-section { padding:50px 20px; text-align:center; }
+.file-drop { border:2px dashed #1E90FF; padding:40px; border-radius:12px; background:#fff; cursor:pointer; transition:0.3s; }
+.file-drop:hover { background:#f0f8ff; }
+input[type="file"] { display:none; }
+.file-item { margin:5px 0; padding:5px 10px; background:#f5f5f5; border-radius:6px; }
 
-    .mobile-header .btn-primary {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 15px;
-    }
+/* Footer */
+footer { background:#222; color:#fff; padding:40px 20px; text-align:center; }
+footer a { color:#1E90FF; }
 
-    .mobile-header .btn-primary:hover {
-      background: #0056b3;
-    }
-  }
+/* Mobile */
+@media (max-width:768px){
+  header { flex-direction:column; padding:15px 20px; }
+  nav { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:10px; }
+  nav a { margin:5px 10px; font-size:14px; }
+  .btn-primary { padding:10px 18px; font-size:14px; }
+  .hero { padding:60px 15px 40px; }
+  .hero h1 { font-size:32px; }
+  .hero p { font-size:16px; }
+  .features { padding:30px 15px; grid-template-columns:1fr; }
+  .feature-card { padding:20px; }
+  .how-it-works { padding:30px 15px; }
+  .how-steps { flex-direction:column; align-items:center; }
+  .step { max-width:100%; width:100%; }
+  .convert-section { padding:30px 15px; }
+  .file-drop { padding:30px; }
+}
 </style>
+</head>
+<body>
 
+<header>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="EasyFreePDF">
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#how">How</a>
+    <a href="#convert">Convert</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#convert" class="btn-primary">Convert Now</a>
+</header>
 
 <section class="hero">
   <h1>Convert Your Files to PDF Instantly</h1>
-  <p>JPG, PNG, DOCX, TXT & other files → PDF. Free, fast, and secure.</p>
+  <p>JPG, PNG, DOCX, TXT & more → PDF. Free, fast, and secure.</p>
 </section>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '1b18b0da71a63265932cf99efdedaa26',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/1b18b0da71a63265932cf99efdedaa26/invoke.js"></script>
-<script type="text/javascript" src="//www.highperformanceformat.com/56e6be46bb82eb4300f0884500eab71f/invoke.js"></script>
 
 <section id="features" class="features">
   <div class="feature-card">
     <h3>Fast Conversion ⚡</h3>
-    <p>Convert your files to PDF in seconds with our lightning-fast engine.</p>
+    <p>Convert your files in seconds with our lightning-fast engine.</p>
   </div>
   <div class="feature-card">
     <h3>Batch Support 📂</h3>
@@ -442,77 +99,61 @@
   </div>
   <div class="feature-card">
     <h3>Secure & Private 🔒</h3>
-    <p>Your files are safe. We delete all uploaded files after conversion.</p>
+    <p>Your files are safe. We delete them after conversion.</p>
   </div>
   <div class="feature-card">
     <h3>Cross-Platform 🌐</h3>
     <p>Works perfectly on desktop, tablet, and mobile devices.</p>
   </div>
 </section>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '1b18b0da71a63265932cf99efdedaa26',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/1b18b0da71a63265932cf99efdedaa26/invoke.js"></script>
-<script type="text/javascript" src="//www.highperformanceformat.com/575373b5091355caaff0b6f5e71172f2/invoke.js"></script>
+
 <section id="how" class="how-it-works">
   <h2>How It Works</h2>
   <div class="how-steps">
-    <div class="step">
-      <h4>1. Upload Your File</h4>
-      <p>Drag & drop or choose files from your device.</p>
-    </div>
-    <div class="step">
-      <h4>2. Choose Format</h4>
-      <p>Select PDF or any other output format.</p>
-    </div>
-    <div class="step">
-      <h4>3. Download PDF</h4>
-      <p>Click convert and get your PDF instantly.</p>
-    </div>
+    <div class="step"><h4>1. Upload File</h4><p>Drag & drop or select files from your device.</p></div>
+    <div class="step"><h4>2. Choose Format</h4><p>Select PDF or other output format.</p></div>
+    <div class="step"><h4>3. Download PDF</h4><p>Click convert and get your PDF instantly.</p></div>
   </div>
 </section>
-<div id="ezoic-pub-ad-placeholder-101"></div>
-<script>
-    ezstandalone.cmd.push(function () {
-        ezstandalone.showAds(101);
-    });
-</script>
-<!-- Drag & Drop PDF Converter Start -->
-<div class="convert-section">
+
+<section id="convert" class="convert-section">
   <h2>Convert Your Files to PDF</h2>
-  <div class="file-drop" id="fileDrop">
-    <p>Drag & drop files here or click to select</p>
-    <input type="file" id="fileInput" multiple style="display:none" accept="image/*,text/plain">
+  <div class="file-drop" id="fileDrop">Drag & drop files here or click to select
+    <input type="file" id="fileInput" multiple accept="image/*,text/plain,.docx,.pdf">
   </div>
   <div id="fileList" style="margin-top:20px;"></div>
   <button class="btn-primary" id="convertBtn" style="margin-top:20px;">Convert to PDF</button>
-</div>
+  <div style="margin-top:20px;">
+    <p>Share this tool:</p>
+    <a href="#" onclick="share('facebook')">Facebook</a> |
+    <a href="#" onclick="share('whatsapp')">WhatsApp</a> |
+    <a href="#" onclick="share('twitter')">Twitter</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>&copy; 2025 easyfreepdf.online. All rights reserved.</p>
+  <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
+// File upload
 const fileDrop = document.getElementById('fileDrop');
 const fileInput = document.getElementById('fileInput');
 const fileList = document.getElementById('fileList');
-const convertBtn = document.getElementById('convertBtn');
 let filesToConvert = [];
 
-// Drag & drop functionality
-fileDrop.addEventListener('click', () => fileInput.click());
-fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('dragover'); });
-fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
-fileDrop.addEventListener('drop', e => { e.preventDefault(); fileDrop.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
-fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+fileDrop.addEventListener('click', ()=>fileInput.click());
+fileDrop.addEventListener('dragover', e=>{e.preventDefault(); fileDrop.classList.add('dragover');});
+fileDrop.addEventListener('dragleave', ()=>fileDrop.classList.remove('dragover'));
+fileDrop.addEventListener('drop', e=>{e.preventDefault(); fileDrop.classList.remove('dragover'); handleFiles(e.dataTransfer.files);});
+fileInput.addEventListener('change', ()=>handleFiles(fileInput.files));
 
-function handleFiles(files) {
+function handleFiles(files){
   filesToConvert = Array.from(files);
   fileList.innerHTML = '';
-  filesToConvert.forEach(file => {
+  filesToConvert.forEach(file=>{
     const div = document.createElement('div');
     div.textContent = file.name;
     div.classList.add('file-item');
@@ -520,241 +161,51 @@ function handleFiles(files) {
   });
 }
 
-convertBtn.addEventListener('click', async () => {
-  if (filesToConvert.length === 0) { alert('Please select files first!'); return; }
+// Convert files to PDF
+convertBtn.addEventListener('click', async ()=>{
+  if(filesToConvert.length===0){ alert('Select files first!'); return; }
   const { jsPDF } = window.jspdf;
-
-  for (const file of filesToConvert) {
+  for(const file of filesToConvert){
     const pdf = new jsPDF();
     const nameWithoutExt = file.name.split('.').slice(0,-1).join('.') || file.name;
 
-    if (file.type.startsWith('image/')) {
+    if(file.type.startsWith('image/')){
       const imgData = await readFileAsDataURL(file);
-      const img = new Image();
-      img.src = imgData;
-      await new Promise(r => img.onload = r);
+      const img = new Image(); img.src = imgData;
+      await new Promise(r=>img.onload=r);
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
-      const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
-      const imgWidth = img.width * ratio;
-      const imgHeight = img.height * ratio;
-      pdf.addImage(imgData, 'JPEG', (pageWidth-imgWidth)/2, (pageHeight-imgHeight)/2, imgWidth, imgHeight);
+      const ratio = Math.min(pageWidth/img.width, pageHeight/img.height);
+      pdf.addImage(imgData,'JPEG',(pageWidth-img.width*ratio)/2,(pageHeight-img.height*ratio)/2,img.width*ratio,img.height*ratio);
       pdf.save(`${nameWithoutExt}.pdf`);
-    } else if (file.type === 'text/plain') {
+    } else if(file.name.endsWith('.txt')){
       const text = await file.text();
-      pdf.text(pdf.splitTextToSize(text, 180), 10, 10);
+      pdf.text(pdf.splitTextToSize(text,180),10,10);
       pdf.save(`${nameWithoutExt}.pdf`);
     } else {
-      alert(`Unsupported file type: ${file.name}`);
+      alert(`Unsupported file: ${file.name}`);
     }
   }
 });
 
-function readFileAsDataURL(file) {
-  return new Promise((resolve,reject) => {
+function readFileAsDataURL(file){
+  return new Promise((resolve,reject)=>{
     const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
+    reader.onload = ()=>resolve(reader.result);
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
 }
+
+// Social sharing
+function share(platform){
+  const url = encodeURIComponent(window.location.href);
+  let shareUrl='';
+  if(platform==='facebook') shareUrl=`https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  if(platform==='whatsapp') shareUrl=`https://wa.me/?text=${url}`;
+  if(platform==='twitter') shareUrl=`https://twitter.com/intent/tweet?url=${url}`;
+  window.open(shareUrl,'_blank');
+}
 </script>
-<!-- Drag & Drop PDF Converter End -->
-
-	<script type="text/javascript">
-	atOptions = {
-		'key' : '1b18b0da71a63265932cf99efdedaa26',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script>
-(function(hizru){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = hizru || {};
-s.src = "\/\/valuable-distance.com\/bFX.VasMd\/GGlj0\/YxWHcS\/Behm\/9\/upZ\/UZlQk\/PyTNY_2ZNTz\/EH1\/NhTQEDtFNuj\/YZ3VM\/TPUS1\/Mhgg";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>	
-<script>
-(function(mc){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mc || {};
-s.src = "\/\/valuable-distance.com\/bhXGVLsyd.G\/lQ0hYmWYch\/BeLmz9qubZyU\/lnkoPFT\/Yx2\/NHzQEG1MNSDecJtHN_j\/Yd3bMKTTUr0COhAg";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>	
-<script type="text/javascript" src="//www.highperformanceformat.com/1b18b0da71a63265932cf99efdedaa26/invoke.js"></script>
-<script type="text/javascript" src="//www.highperformanceformat.com/56e6be46bb82eb4300f0884500eab71f/invoke.js"></script>
-<div id="ezoic-pub-ad-placeholder-101"></div>
-<script>
-    ezstandalone.cmd.push(function () {
-        ezstandalone.showAds(101);
-    });
-<script>
-(function(kjs){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = kjs || {};
-s.src = "\/\/valuable-distance.com\/bXXMV.sadTG-lv0RYkWKck\/reXm\/9LuBZPUJlLkqPCTDYR2gNuzwEh1\/M_TxQCt\/NxjEYa3LMXT\/UcxoNXQ-";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-<script>
-(function(tkso){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = tkso || {};
-s.src = "\/\/unusualroof.com\/cFD\/9a6.bv2G5_ljSPWRQy9\/NcjhYA3NM-TTU\/xNNlyc0q2dNhjLcVxpN\/TcEq4h";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-<script>
-(function(ntvie){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = ntvie || {};
-s.src = "\/\/valuable-distance.com\/b.XqVqs_dfG\/lT0PY-WYcH\/-eume9\/uCZ\/UQl\/kcP\/TyYF2QNdzYEh1aMRTDkXtyNZjaYB3\/MrTsU\/yRMKAg";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>	
-</script>
-<footer id="contact">
-  <p>&copy; 2025 easyfreepdf.online. All rights reserved.</p>
-  <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-</footer>
-
-<script>
-  const fileInput = document.getElementById('fileInput');
-  const fileList = document.getElementById('fileList');
-
-  fileInput.addEventListener('change', () => {
-    fileList.innerHTML = '';
-    Array.from(fileInput.files).forEach(file => {
-      const div = document.createElement('div');
-      div.textContent = file.name;
-      fileList.appendChild(div);
-    });
-  });
-
-  function convertFiles() {
-    if(fileInput.files.length === 0){
-      alert('Please select files to convert!');
-      return;
-    }
-    alert('Conversion started! (Implement server-side conversion)');
-  }
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/56e6be46bb82eb4300f0884500eab71f/invoke.js"></script>
-</script>
-<script type='text/javascript' src='//pl27798652.revenuecpmgate.com/d6/d7/a3/d6d7a35b096b5521bce6eade4c150da2.js'></script>
-<!-- Ultra SEO & Traffic Booster - Drop before </body> -->
-<script>
-(function(){
-    const site = {
-        domain: "https://easyfreepdf.online",
-        baseTitle: "EasyFreePDF - Convert Files to PDF",
-        baseDescription: "Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional online PDF converter.",
-        keywords: ["PDF converter","JPG to PDF","PNG to PDF","DOCX to PDF","TXT to PDF","online PDF converter","free PDF conversion","batch PDF converter"],
-        totalPages: 200 // Internal pages to simulate
-    };
-
-    // ===== 1. Dynamic Internal Pages =====
-    const pageContainer = document.createElement("div");
-    pageContainer.style.display = "none"; 
-    document.body.appendChild(pageContainer);
-
-    for(let i=1; i<=site.totalPages; i++){
-        const page = document.createElement("div");
-        page.className = "internal-page";
-        page.innerHTML = `
-            <h1>${site.baseTitle} - Page ${i}</h1>
-            <p>${site.baseDescription} - Page ${i}</p>
-            <a href="${site.domain}/page${i}">Go to Page ${i}</a>
-        `;
-        pageContainer.appendChild(page);
-    }
-
-    console.log(`✅ ${site.totalPages} internal pages generated`);
-
-    // ===== 2. Dynamic Sitemap Generation & Ping =====
-    let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>`;
-    sitemapXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-    for(let i=1; i<=site.totalPages; i++){
-        sitemapXml += `
-            <url>
-                <loc>${site.domain}/page${i}</loc>
-                <changefreq>daily</changefreq>
-                <priority>0.9</priority>
-            </url>
-        `;
-    }
-    sitemapXml += `</urlset>`;
-
-    const blob = new Blob([sitemapXml], {type: "application/xml"});
-    const sitemapUrl = URL.createObjectURL(blob);
-
-    function pingSearchEngines() {
-        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`).catch(()=>{});
-        fetch(`https://www.bing.com/webmaster/ping.aspx?siteMap=${sitemapUrl}`).catch(()=>{});
-        console.log("✅ Dynamic sitemap pinged to Google & Bing");
-    }
-
-    pingSearchEngines();
-
-    // ===== 3. Automated Internal Link Boosting =====
-    let day = 1;
-    const interval = setInterval(() => {
-        if(day > 15){
-            clearInterval(interval);
-            console.log("🎯 15-day internal link booster complete");
-            return;
-        }
-        pingSearchEngines();
-        document.querySelectorAll(".internal-page a").forEach(a => a.click()); // Simulate internal crawling
-        day++;
-    }, 24*60*60*1000); // every 24 hours
-
-    // ===== 4. Dynamic Meta Tags Injection =====
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content = site.baseDescription;
-    document.head.appendChild(metaDescription);
-
-    const metaKeywords = document.createElement("meta");
-    metaKeywords.name = "keywords";
-    metaKeywords.content = site.keywords.join(", ");
-    document.head.appendChild(metaKeywords);
-
-    console.log("✅ Meta tags injected for SEO optimization");
-
-    // ===== 5. Optional: Daily SEO Refresh =====
-    setInterval(() => {
-        document.title = `${site.baseTitle} - ${new Date().toDateString()}`;
-        console.log("🔄 Daily SEO refresh applied");
-    }, 24*60*60*1000);
-
-})();
-</script>	
 </body>
 </html>
-
