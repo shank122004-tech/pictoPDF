@@ -3,228 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure online PDF conversion.">
+<meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional PDF conversion online.">
 <meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
 <meta name="author" content="easyfreepdf.online">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>PDF Converter Online - Fast & Free | easyfreepdf.online</title>
-<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s">
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
-body { background:#f7f9fc; color:#333; line-height:1.6; }
-a { text-decoration:none; color:inherit; }
+  /* ===== Base Styles ===== */
+  * { box-sizing:border-box; margin:0; padding:0; font-family:'Inter', sans-serif; }
+  body { background:#f7f9fc; color:#333; line-height:1.6; }
+  a { text-decoration:none; color:inherit; }
+  header { background:#fff; padding:15px 20px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:10; flex-wrap:wrap; gap:10px; }
+  header img { max-height:40px; }
+  nav a { margin:0 10px; font-weight:600; font-size:14px; }
+  .btn-primary { background:#1E90FF; color:#fff; padding:10px 20px; border-radius:8px; font-weight:600; transition:0.3s; white-space:nowrap; display:inline-block; }
+  .btn-primary:hover { background:#0077cc; }
 
-/* Header */
-header { background:#fff; padding:15px 50px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:10; flex-wrap:wrap; gap:10px; }
-header img { height:40px; }
-nav a { margin:0 15px; font-weight:600; }
-.btn-primary { background:#1E90FF; color:#fff; padding:12px 25px; border-radius:8px; font-weight:600; transition:0.3s; white-space:nowrap; }
-.btn-primary:hover { background:#0077cc; }
+  /* ===== Hero Section ===== */
+  .hero { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 15px 40px; background:linear-gradient(135deg,#1E90FF 0%,#00C49A 100%); color:#fff; }
+  .hero h1 { font-size:32px; margin-bottom:20px; }
+  .hero p { font-size:16px; margin-bottom:30px; }
 
-/* Hero */
-.hero { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 20px 60px; background:linear-gradient(135deg, #1E90FF 0%, #00C49A 100%); color:#fff; }
-.hero h1 { font-size:48px; margin-bottom:20px; }
-.hero p { font-size:20px; margin-bottom:30px; }
+  /* ===== Features ===== */
+  .features { display:grid; grid-template-columns:1fr; gap:20px; padding:30px 15px; max-width:1200px; margin:auto; }
+  .feature-card { background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.1); transition:0.3s; }
+  .feature-card:hover { transform:translateY(-5px); }
+  .feature-card h3 { margin-bottom:15px; font-size:20px; }
+  .feature-card p { color:#666; font-size:14px; }
 
-/* Features */
-.features { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:50px; max-width:1200px; margin:auto; }
-.feature-card { background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.1); transition:0.3s; }
-.feature-card:hover { transform:translateY(-5px); }
-.feature-card h3 { margin-bottom:15px; font-size:20px; }
-.feature-card p { color:#666; }
+  /* ===== How It Works ===== */
+  .how-it-works { background:#fff; padding:30px 15px; text-align:center; }
+  .how-steps { display:flex; flex-direction:column; gap:15px; margin-top:20px; }
+  .step { background:#f0f4f8; border-radius:12px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+  .step h4 { margin-bottom:10px; font-size:16px; }
 
-/* How it works */
-.how-it-works { background:#fff; padding:50px 20px; text-align:center; }
-.how-steps { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
-.step { max-width:250px; background:#f0f4f8; border-radius:12px; padding:25px; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
-.step h4 { margin-bottom:15px; }
+  /* ===== Convert Section ===== */
+  .convert-section { padding:30px 15px; text-align:center; }
+  .file-drop { border:2px dashed #1E90FF; padding:30px; border-radius:12px; background:#fff; cursor:pointer; transition:0.3s; }
+  .file-drop:hover { background:#f0f8ff; }
+  input[type="file"] { display:none; }
+  #fileList div { margin:5px 0; font-size:14px; }
 
-/* Convert section */
-.convert-section { padding:50px 20px; text-align:center; }
-.file-drop { border:2px dashed #1E90FF; padding:40px; border-radius:12px; background:#fff; cursor:pointer; transition:0.3s; }
-.file-drop:hover { background:#f0f8ff; }
-input[type="file"] { display:none; }
-.file-item { margin:5px 0; padding:5px 10px; background:#f5f5f5; border-radius:6px; }
+  /* ===== Footer ===== */
+  footer { background:#222; color:#fff; padding:30px 15px; text-align:center; font-size:14px; }
+  footer a { color:#1E90FF; }
 
-/* Footer */
-footer { background:#222; color:#fff; padding:40px 20px; text-align:center; }
-footer a { color:#1E90FF; }
-
-/* Mobile */
-@media (max-width:768px){
-  header { flex-direction:column; padding:15px 20px; }
-  nav { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:10px; }
-  nav a { margin:5px 10px; font-size:14px; }
-  .btn-primary { padding:10px 18px; font-size:14px; }
-  .hero { padding:60px 15px 40px; }
-  .hero h1 { font-size:32px; }
-  .hero p { font-size:16px; }
-  .features { padding:30px 15px; grid-template-columns:1fr; }
-  .feature-card { padding:20px; }
-  .how-it-works { padding:30px 15px; }
-  .how-steps { flex-direction:column; align-items:center; }
-  .step { max-width:100%; width:100%; }
-  .convert-section { padding:30px 15px; }
-  .file-drop { padding:30px; }
-}
+  /* ===== Adsterra Responsive Wrapper ===== */
+  .ad-container { text-align:center; max-width:100%; overflow:hidden; margin:20px 0; }
 </style>
-<meta name="google-site-verification" content="Xu4dF44-0VgpB05_q_fc9mcp5ys9r0ChtAj5Xf28DeE" />  
-</head>  
+</head>
+
 <body>
+  <!-- ===== Header ===== -->
+  <header>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="EasyFreePDF Logo">
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#convert">Convert</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#convert" class="btn-primary">Convert Now</a>
+  </header>
 
-<header>  
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="EasyFreePDF">
-  <nav>
-    <a href="#features">Features</a>
-    <a href="#how">How</a>
-    <a href="#convert">Convert</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a href="#convert" class="btn-primary">Convert Now</a>
-</header>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '575373b5091355caaff0b6f5e71172f2',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/575373b5091355caaff0b6f5e71172f2/invoke.js"></script>
-<section class="hero">
-  <h1>Convert Your Files to PDF Instantly</h1>
-  <p>JPG, PNG, DOCX, TXT & more → PDF. Free, fast, and secure.</p>
-</section>
-
-<section id="features" class="features">
-  <div class="feature-card">
-    <h3>Fast Conversion ⚡</h3>
-    <p>Convert your files in seconds with our lightning-fast engine.</p>
+  <!-- ===== Top Adsterra Banner ===== -->
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '575373b5091355caaff0b6f5e71172f2',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/575373b5091355caaff0b6f5e71172f2/invoke.js"></script>
   </div>
-  <div class="feature-card">
-    <h3>Batch Support 📂</h3>
-    <p>Upload multiple files at once and convert them in a single click.</p>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <h1>Convert Your Files to PDF Instantly</h1>
+    <p>JPG, PNG, DOCX, TXT & other files → PDF. Free, fast, and secure.</p>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section id="features" class="features">
+    <div class="feature-card">
+      <h3>Fast Conversion ⚡</h3>
+      <p>Convert your files to PDF in seconds with our lightning-fast engine.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Batch Support 📂</h3>
+      <p>Upload multiple files at once and convert them in a single click.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Secure & Private 🔒</h3>
+      <p>Your files are safe. We delete all uploaded files after conversion.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cross-Platform 🌐</h3>
+      <p>Works perfectly on desktop, tablet, and mobile devices.</p>
+    </div>
+  </section>
+
+  <!-- ===== How It Works ===== -->
+  <section id="how" class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="how-steps">
+      <div class="step">
+        <h4>1. Upload Your File</h4>
+        <p>Drag & drop or choose files from your device.</p>
+      </div>
+      <div class="step">
+        <h4>2. Choose Format</h4>
+        <p>Select PDF or any other output format.</p>
+      </div>
+      <div class="step">
+        <h4>3. Download PDF</h4>
+        <p>Click convert and get your PDF instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Convert Section ===== -->
+  <section id="convert" class="convert-section">
+    <h2>Convert Your Files to PDF</h2>
+    <div class="file-drop" id="fileDrop">
+      <p>Drag & drop files here or click to select</p>
+      <input type="file" id="fileInput" multiple accept="image/*,text/plain">
+    </div>
+    <div id="fileList"></div>
+    <button class="btn-primary" id="convertBtn" style="margin-top:20px;">Convert to PDF</button>
+  </section>
+
+  <!-- ===== Bottom Adsterra Banner ===== -->
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '575373b5091355caaff0b6f5e71172f2',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/575373b5091355caaff0b6f5e71172f2/invoke.js"></script>
   </div>
-  <div class="feature-card">
-    <h3>Secure & Private 🔒</h3>
-    <p>Your files are safe. We delete them after conversion.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Cross-Platform 🌐</h3>
-    <p>Works perfectly on desktop, tablet, and mobile devices.</p>
-  </div>
-</section>
 
-<section id="how" class="how-it-works">
-  <h2>How It Works</h2>
-  <div class="how-steps">
-    <div class="step"><h4>1. Upload File</h4><p>Drag & drop or select files from your device.</p></div>
-    <div class="step"><h4>2. Choose Format</h4><p>Select PDF or other output format.</p></div>
-    <div class="step"><h4>3. Download PDF</h4><p>Click convert and get your PDF instantly.</p></div>
-  </div>
-</section>
+  <!-- ===== Footer ===== -->
+  <footer id="contact">
+    <p>&copy; 2025 easyfreepdf.online. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
 
-<section id="convert" class="convert-section">
-  <h2>Convert Your Files to PDF</h2>
-  <div class="file-drop" id="fileDrop">Drag & drop files here or click to select
-    <input type="file" id="fileInput" multiple accept="image/*,text/plain,.docx,.pdf">
-  </div>
-  <div id="fileList" style="margin-top:20px;"></div>
-  <button class="btn-primary" id="convertBtn" style="margin-top:20px;">Convert to PDF</button>
-  <div style="margin-top:20px;">
-    <p>Share this tool:</p>
-    <a href="#" onclick="share('facebook')">Facebook</a> |
-    <a href="#" onclick="share('whatsapp')">WhatsApp</a> |
-    <a href="#" onclick="share('twitter')">Twitter</a>
-  </div>
-</section>
-<script type="text/javascript">
-	atOptions = {
-		'key' : '575373b5091355caaff0b6f5e71172f2',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/575373b5091355caaff0b6f5e71172f2/invoke.js"></script>
-<footer id="contact">
-  <p>&copy; 2025 easyfreepdf.online. All rights reserved.</p>
-  <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-</footer>
+  <!-- ===== PDF Conversion Script ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const fileDrop = document.getElementById('fileDrop');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+    const convertBtn = document.getElementById('convertBtn');
+    let filesToConvert = [];
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-// File upload
-const fileDrop = document.getElementById('fileDrop');
-const fileInput = document.getElementById('fileInput');
-const fileList = document.getElementById('fileList');
-let filesToConvert = [];
+    fileDrop.addEventListener('click', () => fileInput.click());
+    fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('dragover'); });
+    fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
+    fileDrop.addEventListener('drop', e => { e.preventDefault(); fileDrop.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
+    fileInput.addEventListener('change', () => handleFiles(fileInput.files));
 
-fileDrop.addEventListener('click', ()=>fileInput.click());
-fileDrop.addEventListener('dragover', e=>{e.preventDefault(); fileDrop.classList.add('dragover');});
-fileDrop.addEventListener('dragleave', ()=>fileDrop.classList.remove('dragover'));
-fileDrop.addEventListener('drop', e=>{e.preventDefault(); fileDrop.classList.remove('dragover'); handleFiles(e.dataTransfer.files);});
-fileInput.addEventListener('change', ()=>handleFiles(fileInput.files));
-
-function handleFiles(files){
-  filesToConvert = Array.from(files);
-  fileList.innerHTML = '';
-  filesToConvert.forEach(file=>{
-    const div = document.createElement('div');
-    div.textContent = file.name;
-    div.classList.add('file-item');
-    fileList.appendChild(div);
-  });
-}
-
-// Convert files to PDF
-convertBtn.addEventListener('click', async ()=>{
-  if(filesToConvert.length===0){ alert('Select files first!'); return; }
-  const { jsPDF } = window.jspdf;
-  for(const file of filesToConvert){
-    const pdf = new jsPDF();
-    const nameWithoutExt = file.name.split('.').slice(0,-1).join('.') || file.name;
-
-    if(file.type.startsWith('image/')){
-      const imgData = await readFileAsDataURL(file);
-      const img = new Image(); img.src = imgData;
-      await new Promise(r=>img.onload=r);
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const pageHeight = pdf.internal.pageSize.getHeight();
-      const ratio = Math.min(pageWidth/img.width, pageHeight/img.height);
-      pdf.addImage(imgData,'JPEG',(pageWidth-img.width*ratio)/2,(pageHeight-img.height*ratio)/2,img.width*ratio,img.height*ratio);
-      pdf.save(`${nameWithoutExt}.pdf`);
-    } else if(file.name.endsWith('.txt')){
-      const text = await file.text();
-      pdf.text(pdf.splitTextToSize(text,180),10,10);
-      pdf.save(`${nameWithoutExt}.pdf`);
-    } else {
-      alert(`Unsupported file: ${file.name}`);
+    function handleFiles(files) {
+      filesToConvert = Array.from(files);
+      fileList.innerHTML = '';
+      filesToConvert.forEach(file => {
+        const div = document.createElement('div');
+        div.textContent = file.name;
+        fileList.appendChild(div);
+      });
     }
-  }
-});
 
-function readFileAsDataURL(file){
-  return new Promise((resolve,reject)=>{
-    const reader = new FileReader();
-    reader.onload = ()=>resolve(reader.result);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
+    convertBtn.addEventListener('click', async () => {
+      if (filesToConvert.length === 0) { alert('Please select files first!'); return; }
+      const { jsPDF } = window.jspdf;
 
-// Social sharing
-function share(platform){
-  const url = encodeURIComponent(window.location.href);
-  let shareUrl='';
-  if(platform==='facebook') shareUrl=`https://www.facebook.com/sharer/sharer.php?u=${url}`;
-  if(platform==='whatsapp') shareUrl=`https://wa.me/?text=${url}`;
-  if(platform==='twitter') shareUrl=`https://twitter.com/intent/tweet?url=${url}`;
-  window.open(shareUrl,'_blank');
-}
-</script>
+      for (const file of filesToConvert) {
+        const pdf = new jsPDF();
+        const nameWithoutExt = file.name.split('.').slice(0,-1).join('.') || file.name;
+
+        if (file.type.startsWith('image/')) {
+          const imgData = await readFileAsDataURL(file);
+          const img = new Image();
+          img.src = imgData;
+          await new Promise(r => img.onload = r);
+          const pageWidth = pdf.internal.pageSize.getWidth();
+          const pageHeight = pdf.internal.pageSize.getHeight();
+          const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
+          const imgWidth = img.width * ratio;
+          const imgHeight = img.height * ratio;
+          pdf.addImage(imgData, 'JPEG', (pageWidth-imgWidth)/2, (pageHeight-imgHeight)/2, imgWidth, imgHeight);
+          pdf.save(`${nameWithoutExt}.pdf`);
+        } else if (file.type === 'text/plain') {
+          const text = await file.text();
+          pdf.text(pdf.splitTextToSize(text, 180), 10, 10);
+          pdf.save(`${nameWithoutExt}.pdf`);
+        } else {
+          alert(`Unsupported file type: ${file.name}`);
+        }
+      }
+    });
+
+    function readFileAsDataURL(file) {
+      return new Promise((resolve,reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+  </script>
 </body>
 </html>
