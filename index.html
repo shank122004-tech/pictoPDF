@@ -223,5 +223,29 @@ l.parentNode.insertBefore(s, l);
       });
     }
   </script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD6PyQHB_IG_77L_xVofQyZaYteZ3w84-Q",
+    authDomain: "pdf-converter-58016.firebaseapp.com",
+    projectId: "pdf-converter-58016",
+    storageBucket: "pdf-converter-58016.firebasestorage.app",
+    messagingSenderId: "464889747807",
+    appId: "1:464889747807:web:c6e85fe9f2475129367eea",
+    measurementId: "G-QXV1FG048N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>  
 </body>
 </html>
