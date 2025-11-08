@@ -1,251 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Convert JPG, PNG, DOCX, TXT and other files to PDF instantly. Free, fast, secure, and professional PDF conversion online.">
-<meta name="keywords" content="PDF converter, JPG to PDF, PNG to PDF, DOCX to PDF, TXT to PDF, online PDF converter, free PDF conversion, batch PDF converter">
-<meta name="author" content="easyfreepdf.online">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>PDF Converter Online - Fast & Free | easyfreepdf.online</title>
-<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  /* ===== Base Styles ===== */
-  * { box-sizing:border-box; margin:0; padding:0; font-family:'Inter', sans-serif; }
-  body { background:#f7f9fc; color:#333; line-height:1.6; }
-  a { text-decoration:none; color:inherit; }
-  header { background:#fff; padding:15px 20px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:10; flex-wrap:wrap; gap:10px; }
-  header img { max-height:40px; }
-  nav a { margin:0 10px; font-weight:600; font-size:14px; }
-  .btn-primary { background:#1E90FF; color:#fff; padding:10px 20px; border-radius:8px; font-weight:600; transition:0.3s; white-space:nowrap; display:inline-block; }
-  .btn-primary:hover { background:#0077cc; }
-
-  /* ===== Hero Section ===== */
-  .hero { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 15px 40px; background:linear-gradient(135deg,#1E90FF 0%,#00C49A 100%); color:#fff; }
-  .hero h1 { font-size:32px; margin-bottom:20px; }
-  .hero p { font-size:16px; margin-bottom:30px; }
-
-  /* ===== Features ===== */
-  .features { display:grid; grid-template-columns:1fr; gap:20px; padding:30px 15px; max-width:1200px; margin:auto; }
-  .feature-card { background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.1); transition:0.3s; }
-  .feature-card:hover { transform:translateY(-5px); }
-  .feature-card h3 { margin-bottom:15px; font-size:20px; }
-  .feature-card p { color:#666; font-size:14px; }
-
-  /* ===== How It Works ===== */
-  .how-it-works { background:#fff; padding:30px 15px; text-align:center; }
-  .how-steps { display:flex; flex-direction:column; gap:15px; margin-top:20px; }
-  .step { background:#f0f4f8; border-radius:12px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
-  .step h4 { margin-bottom:10px; font-size:16px; }
-
-  /* ===== Convert Section ===== */
-  .convert-section { padding:30px 15px; text-align:center; }
-  .file-drop { border:2px dashed #1E90FF; padding:30px; border-radius:12px; background:#fff; cursor:pointer; transition:0.3s; }
-  .file-drop:hover { background:#f0f8ff; }
-  input[type="file"] { display:none; }
-  #fileList div { margin:5px 0; font-size:14px; }
-
-  /* ===== Footer ===== */
-  footer { background:#222; color:#fff; padding:30px 15px; text-align:center; font-size:14px; }
-  footer a { color:#1E90FF; }
-
-  /* ===== Adsterra Responsive Wrapper ===== */
-  .ad-container { text-align:center; max-width:100%; overflow:hidden; margin:20px 0; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocConvert Pro | Free PDF & Document Converter</title>
+    <meta name="description" content="Convert any document format for free with DocConvert Pro. PDF, Word, Excel, PowerPoint conversions with premium features for unlimited conversions without watermark.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
-
 <body>
-  <!-- ===== Header ===== -->
-  <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoCPRC8vik1GxwLnyD1mX-nWu0wmN7MSFw8Q&s" alt="EasyFreePDF Logo">
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#how">How It Works</a>
-      <a href="#convert">Convert</a>
-      <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1 class="neon-text">DocConvert<span class="neon-accent">Pro</span></h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#converter" class="nav-link">Converter</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#premium" class="nav-link">Premium</a>
+                <div class="auth-buttons">
+                    <button id="login-btn" class="btn btn-login">Login</button>
+                    <button id="signup-btn" class="btn btn-signup">Sign Up</button>
+                    <button id="logout-btn" class="btn btn-logout" style="display: none;">Logout</button>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-    <a href="#convert" class="btn-primary">Convert Now</a>
-  </header>
 
-  <!-- ===== Top Adsterra Banner ===== -->
-  <div class="ad-container">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '575373b5091355caaff0b6f5e71172f2',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/575373b5091355caaff0b6f5e71172f2/invoke.js"></script>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title neon-text">Convert Any Document <span class="neon-accent">Instantly</span></h1>
+                <p class="hero-description">Free PDF, Word, Excel, PowerPoint conversions with professional quality. No registration required for basic conversions!</p>
+                <div class="hero-buttons">
+                    <a href="#converter" class="btn btn-primary">Start Converting</a>
+                    <a href="#premium" class="btn btn-secondary">Go Premium</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="neon-circle"></div>
+                <div class="file-icons">
+                    <div class="file-icon pdf">PDF</div>
+                    <div class="file-icon doc">DOC</div>
+                    <div class="file-icon xls">XLS</div>
+                    <div class="file-icon ppt">PPT</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <h1>Convert Your Files to PDF Instantly</h1>
-    <p>JPG, PNG, DOCX, TXT & other files → PDF. Free, fast, and secure.</p>
-  </section>
+    <!-- Converter Section -->
+    <section id="converter" class="converter">
+        <div class="container">
+            <h2 class="section-title neon-text">Document Converter</h2>
+            <div class="converter-card">
+                <div class="converter-header">
+                    <h3>Upload Your File</h3>
+                    <p>Convert between PDF, Word, Excel, PowerPoint, and more</p>
+                </div>
+                <div class="converter-body">
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p>Drag & drop your file here or <span class="browse-link">browse</span></p>
+                        <input type="file" id="file-input" hidden>
+                    </div>
+                    <div class="converter-options">
+                        <div class="option-group">
+                            <label for="from-format">Convert From:</label>
+                            <select id="from-format">
+                                <option value="pdf">PDF Document</option>
+                                <option value="doc">Word Document</option>
+                                <option value="docx">Word Document (DOCX)</option>
+                                <option value="xls">Excel Spreadsheet</option>
+                                <option value="xlsx">Excel Spreadsheet (XLSX)</option>
+                                <option value="ppt">PowerPoint Presentation</option>
+                                <option value="pptx">PowerPoint Presentation (PPTX)</option>
+                                <option value="txt">Text File</option>
+                                <option value="jpg">JPG Image</option>
+                                <option value="png">PNG Image</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="to-format">Convert To:</label>
+                            <select id="to-format">
+                                <option value="pdf">PDF Document</option>
+                                <option value="doc">Word Document</option>
+                                <option value="docx">Word Document (DOCX)</option>
+                                <option value="xls">Excel Spreadsheet</option>
+                                <option value="xlsx">Excel Spreadsheet (XLSX)</option>
+                                <option value="ppt">PowerPoint Presentation</option>
+                                <option value="pptx">PowerPoint Presentation (PPTX)</option>
+                                <option value="txt">Text File</option>
+                                <option value="jpg">JPG Image</option>
+                                <option value="png">PNG Image</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="conversion-options" id="premium-options" style="display: none;">
+                        <h4>Premium Options</h4>
+                        <div class="premium-option">
+                            <input type="checkbox" id="no-watermark" checked>
+                            <label for="no-watermark">No Watermark</label>
+                        </div>
+                        <div class="premium-option">
+                            <input type="checkbox" id="high-quality">
+                            <label for="high-quality">High Quality (300 DPI)</label>
+                        </div>
+                        <div class="premium-option">
+                            <input type="checkbox" id="batch-mode">
+                            <label for="batch-mode">Batch Conversion</label>
+                        </div>
+                    </div>
+                    <div class="converter-actions">
+                        <button id="convert-btn" class="btn btn-primary">Convert Now</button>
+                        <button id="preview-btn" class="btn btn-secondary" disabled>Preview</button>
+                    </div>
+                    <div class="conversion-status" id="conversion-status" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <p class="status-text">Converting your file...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ===== Features ===== -->
-  <section id="features" class="features">
-    <div class="feature-card">
-      <h3>Fast Conversion ⚡</h3>
-      <p>Convert your files to PDF in seconds with our lightning-fast engine.</p>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title neon-text">Why Choose DocConvert Pro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>All Format Support</h3>
+                    <p>Convert between PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, JPG, PNG and more.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15848 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 17H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>No Registration Required</h3>
+                    <p>Convert files instantly without creating an account. Free users get 5 conversions per day with watermark.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>High Quality Conversions</h3>
+                    <p>Maintain formatting, images, and layout integrity during conversion with our advanced algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Fast Processing</h3>
+                    <p>Convert documents in seconds with our optimized cloud infrastructure. No waiting in queues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Section -->
+    <section id="premium" class="premium">
+        <div class="container">
+            <h2 class="section-title neon-text">Go Premium - Only $5/month</h2>
+            <div class="premium-container">
+                <div class="premium-card">
+                    <div class="premium-header">
+                        <h3>Premium Features</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">5</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <div class="premium-features">
+                        <div class="premium-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Unlimited conversions without watermark</span>
+                        </div>
+                        <div class="premium-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Priority processing - faster conversions</span>
+                        </div>
+                        <div class="premium-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Batch conversion - convert multiple files at once</span>
+                        </div>
+                        <div class="premium-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Advanced formatting options</span>
+                        </div>
+                        <div class="premium-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Cloud storage for converted files</span>
+                        </div>
+                        <div class="premium-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Priority customer support</span>
+                        </div>
+                    </div>
+                    <div class="premium-actions">
+                        <button id="premium-btn" class="btn btn-premium">Upgrade to Premium</button>
+                        <div id="premium-status" class="premium-status" style="display: none;">
+                            <span class="premium-badge">Premium Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Login to Your Account</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group" id="confirm-password-group" style="display: none;">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password">
+                    </div>
+                    <button type="submit" id="auth-submit" class="btn btn-primary">Login</button>
+                </form>
+                <div class="auth-switch">
+                    <p id="auth-switch-text">Don't have an account? <a href="#" id="auth-switch-link">Sign up</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="feature-card">
-      <h3>Batch Support 📂</h3>
-      <p>Upload multiple files at once and convert them in a single click.</p>
+
+      <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upgrade to Premium</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <h3>United States & International</h3>
+                        <p>Pay with Stripe (Credit Card, Apple Pay, Google Pay)</p>
+                        <button id="stripe-payment" class="btn btn-primary">Pay with Stripe - $5/month</button>
+                    </div>
+                    <div class="payment-option">
+                        <h3>India</h3>
+                        <p>Pay with Razorpay (UPI, Net Banking, Credit/Debit Card)</p>
+                        <button id="razorpay-payment" class="btn btn-primary">Pay with Razorpay - ₹415/month</button>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">
+                            You will be redirected to Razorpay to complete your payment
+                        </p>
+                    </div>
+                    <div class="payment-option" style="text-align: center; background: rgba(0, 243, 255, 0.1);">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="feature-card">
-      <h3>Secure & Private 🔒</h3>
-      <p>Your files are safe. We delete all uploaded files after conversion.</p>
+
+    <!-- Celebration Animation -->
+    <div id="celebration" class="celebration">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="message">
+            <h2>Conversion Successful!</h2>
+            <p>Your document has been converted successfully.</p>
+            <button id="download-btn" class="btn btn-primary">Download File</button>
+            <button id="convert-another-btn" class="btn btn-secondary">Convert Another File</button>
+        </div>
     </div>
-    <div class="feature-card">
-      <h3>Cross-Platform 🌐</h3>
-      <p>Works perfectly on desktop, tablet, and mobile devices.</p>
-    </div>
-  </section>
 
-  <!-- ===== How It Works ===== -->
-  <section id="how" class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="how-steps">
-      <div class="step">
-        <h4>1. Upload Your File</h4>
-        <p>Drag & drop or choose files from your device.</p>
-      </div>
-      <div class="step">
-        <h4>2. Choose Format</h4>
-        <p>Select PDF or any other output format.</p>
-      </div>
-      <div class="step">
-        <h4>3. Download PDF</h4>
-        <p>Click convert and get your PDF instantly.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="neon-text">DocConvert<span class="neon-accent">Pro</span></h3>
+                    <p>The ultimate document conversion tool with premium features and professional quality.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#converter">Converter</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#premium">Premium</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Supported Formats</h4>
+                    <ul>
+                        <li>PDF to Word</li>
+                        <li>Word to PDF</li>
+                        <li>Excel to PDF</li>
+                        <li>PDF to Excel</li>
+                        <li>PowerPoint to PDF</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>support@docconvertpro.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>Mon-Fri: 9am-6pm EST</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DocConvert Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- ===== Convert Section ===== -->
-  <section id="convert" class="convert-section">
-    <h2>Convert Your Files to PDF</h2>
-    <div class="file-drop" id="fileDrop">
-      <p>Drag & drop files here or click to select</p>
-      <input type="file" id="fileInput" multiple accept="image/*,text/plain">
-    </div>
-    <div id="fileList"></div>
-    <button class="btn-primary" id="convertBtn" style="margin-top:20px;">Convert to PDF</button>
-  </section>
-
-  <!-- ===== Bottom Adsterra Banner ===== -->
-<script>
-(function(oiwvbq){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = oiwvbq || {};
-s.src = "\/\/tatteredpassenger.com\/bOXaV.std\/GmlI0cYqWnc-\/sewmq9Gu-Z\/UklJklPBTLYg2oNBzxEe1vN-ToEFtgNVjsYH3jM\/TdUN1\/MngX";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-  <!-- ===== Footer ===== -->
-  <footer id="contact">
-    <p>&copy; 2025 easyfreepdf.online. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </footer>
-
-  <!-- ===== PDF Conversion Script ===== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script>
-    const fileDrop = document.getElementById('fileDrop');
-    const fileInput = document.getElementById('fileInput');
-    const fileList = document.getElementById('fileList');
-    const convertBtn = document.getElementById('convertBtn');
-    let filesToConvert = [];
-
-    fileDrop.addEventListener('click', () => fileInput.click());
-    fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('dragover'); });
-    fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
-    fileDrop.addEventListener('drop', e => { e.preventDefault(); fileDrop.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
-    fileInput.addEventListener('change', () => handleFiles(fileInput.files));
-
-    function handleFiles(files) {
-      filesToConvert = Array.from(files);
-      fileList.innerHTML = '';
-      filesToConvert.forEach(file => {
-        const div = document.createElement('div');
-        div.textContent = file.name;
-        fileList.appendChild(div);
-      });
-    }
-
-    convertBtn.addEventListener('click', async () => {
-      if (filesToConvert.length === 0) { alert('Please select files first!'); return; }
-      const { jsPDF } = window.jspdf;
-
-      for (const file of filesToConvert) {
-        const pdf = new jsPDF();
-        const nameWithoutExt = file.name.split('.').slice(0,-1).join('.') || file.name;
-
-        if (file.type.startsWith('image/')) {
-          const imgData = await readFileAsDataURL(file);
-          const img = new Image();
-          img.src = imgData;
-          await new Promise(r => img.onload = r);
-          const pageWidth = pdf.internal.pageSize.getWidth();
-          const pageHeight = pdf.internal.pageSize.getHeight();
-          const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
-          const imgWidth = img.width * ratio;
-          const imgHeight = img.height * ratio;
-          pdf.addImage(imgData, 'JPEG', (pageWidth-imgWidth)/2, (pageHeight-imgHeight)/2, imgWidth, imgHeight);
-          pdf.save(`${nameWithoutExt}.pdf`);
-        } else if (file.type === 'text/plain') {
-          const text = await file.text();
-          pdf.text(pdf.splitTextToSize(text, 180), 10, 10);
-          pdf.save(`${nameWithoutExt}.pdf`);
-        } else {
-          alert(`Unsupported file type: ${file.name}`);
-        }
-      }
-    });
-
-    function readFileAsDataURL(file) {
-      return new Promise((resolve,reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
-  </script>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyD6PyQHB_IG_77L_xVofQyZaYteZ3w84-Q",
-    authDomain: "pdf-converter-58016.firebaseapp.com",
-    projectId: "pdf-converter-58016",
-    storageBucket: "pdf-converter-58016.firebasestorage.app",
-    messagingSenderId: "464889747807",
-    appId: "1:464889747807:web:c6e85fe9f2475129367eea",
-    measurementId: "G-QXV1FG048N"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>  
+    <script src="script.js"></script>
 </body>
 </html>
